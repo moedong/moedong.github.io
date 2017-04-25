@@ -6,14 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: css3 | moedong&#39; personal blog</title>
+  <title>关于H5平时工作中的一些知识点总结 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="moedong' personal blog">
-<meta property="og:url" content="http://yoursite.com/tags/css3/index.html">
+  <meta name="description" content="H5项目常见问题汇总及解决方案">
+<meta name="keywords" content="html5,css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于H5平时工作中的一些知识点总结">
+<meta property="og:url" content="http://yoursite.com/2017/01/02/html5/index.html">
 <meta property="og:site_name" content="moedong' personal blog">
+<meta property="og:description" content="H5项目常见问题汇总及解决方案">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png">
+<meta property="og:image" content="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141205/1417746123387641.jpg">
+<meta property="og:image" content="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141205/1417746126325962.jpg">
+<meta property="og:image" content="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141205/1417746129250017.jpg">
+<meta property="og:updated_time" content="2017-04-25T04:51:56.861Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="moedong' personal blog">
+<meta name="twitter:title" content="关于H5平时工作中的一些知识点总结">
+<meta name="twitter:description" content="H5项目常见问题汇总及解决方案">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -143,36 +159,135 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-html5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/02/html5/" class="archive-article-date">
-  	<time datetime="2017-01-01T16:27:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/02/html5/">关于H5平时工作中的一些知识点总结</a>
+    <h1 class="article-title" itemprop="name">
+      关于H5平时工作中的一些知识点总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/01/02/html5/" class="archive-article-date">
+  	<time datetime="2017-01-01T16:27:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共1,586字</span>，
+      <span>阅读时间6分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、flex-弹性布局"><a href="#1、flex-弹性布局" class="headerlink" title="1、flex 弹性布局"></a>1、flex 弹性布局</h3><blockquote>
+<p>flex-direction<br>flex-wrap<br>flex-flow<br>justify-content (水平)<br>align-items (竖直 单轴)<br>align-content (竖直 多轴)</p>
+</blockquote>
+<a id="more"></a>
+<h6 id="1-1、flex-direction"><a href="#1-1、flex-direction" class="headerlink" title="1.1、flex-direction"></a>1.1、flex-direction</h6><blockquote>
+<p>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。</p>
+</blockquote>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt="flex-direction"></p>
+<h6 id="1-2、flex-wrap"><a href="#1-2、flex-wrap" class="headerlink" title="1.2、flex-wrap"></a>1.2、flex-wrap</h6><blockquote>
+<p>nowrap（默认）：不换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt="nowrap"></p>
+<p>wrap：换行，第一行在上方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt="wrap"></p>
+<p>wrap-reverse：换行，第一行在下方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg" alt="wrap-reverse"></p>
+</blockquote>
+<h6 id="1-3、flex-flow"><a href="#1-3、flex-flow" class="headerlink" title="1.3、flex-flow"></a>1.3、flex-flow</h6><blockquote>
+<p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="1-4、justify-content"><a href="#1-4、justify-content" class="headerlink" title="1.4、justify-content"></a>1.4、justify-content</h6><blockquote>
+<p>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</p>
+</blockquote>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt="justify-content"></p>
+<h6 id="1-5、align-items"><a href="#1-5、align-items" class="headerlink" title="1.5、align-items"></a>1.5、align-items</h6><blockquote>
+<p>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>baseline: 项目的第一行文字的基线对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+</blockquote>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt="align-content"></p>
+<h6 id="1-6、align-content"><a href="#1-6、align-content" class="headerlink" title="1.6、align-content"></a>1.6、align-content</h6><blockquote>
+<p>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
+</blockquote>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="align-content"></p>
+<h3 id="2、文本垂直居中"><a href="#2、文本垂直居中" class="headerlink" title="2、文本垂直居中"></a>2、文本垂直居中</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box box1"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>我是垂直居中元素<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/* 方法1：dispaly:table-cell */</div><div class="line"></div><div class="line">.box1&#123; text-align:center; display:table-cell; vertical-align:middle; &#125;</div><div class="line"></div><div class="line">/* 方法2：display:flex */</div><div class="line"></div><div class="line">.box2&#123; display:flex; justify-content:center; align-items:center; text-align:center; &#125;</div><div class="line"></div><div class="line">/* 方法3：translate(-50%,-50%) */</div><div class="line"></div><div class="line">.box3&#123; position:relative;&#125;</div><div class="line">.box3 span&#123; position:absolute; left:50%; top:50%; -webkit-transform:translate(-50%,-50%); width:100%; text-align:center; &#125;</div><div class="line"></div><div class="line">/* 方法4：兼容 ie ，添加一个 空标签 i */</div><div class="line"></div><div class="line">.box1&#123;height:300px;width: 400px;text-align: center;&#125;</div><div class="line"></div><div class="line">.box1 span&#123;vertical-align: middle; display: inline-block; *display: inline; *zoom: 1;&#125;</div><div class="line"></div><div class="line">.box1 i&#123; width: 0; height: 100%; vertical-align: middle;display:inline-block;&#125;</div></pre></td></tr></table></figure>
+<h3 id="3、伪元素实现换行，替代换行标签"><a href="#3、伪元素实现换行，替代换行标签" class="headerlink" title="3、伪元素实现换行，替代换行标签"></a>3、伪元素实现换行，替代换行标签</h3><blockquote>
+<ul>
+<li>《CSS SECRET》 中对 br 标签的描述是，这种方法不仅在可维护性方面是一种糟糕的实践，而且污染了结构层的代码，运用 after 伪元素，可以有一种非常优雅的解决方案。</li>
+<li>通过给元素的 after 伪元素添加 content 为 “\A” 的值。这里 \A 表示的是什么呢？有一个 Unicode 字符是专门代表换行符的：0x000A 。 在 CSS 中，这个字符可以写作 “\000A”， 或简化为 “\A”。这里我们用它来作为 ::after 伪元素的内容。也就是在元素末尾添加了一个换行符的意思。而 white-space: pre; 的作用是保留元素后面的空白符和换行符，结合两者，就可以轻松实现在行内级元素末尾实现换行。</li>
+</ul>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-tag">inline-element</span> <span class="selector-pseudo">::after</span>&#123;</div><div class="line">       <span class="attribute">content</span>:<span class="string">"\A"</span>;</div><div class="line">       <span class="attribute">white-space</span>: pre;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4、will-change提高页面滚动、动画等渲染性能"><a href="#4、will-change提高页面滚动、动画等渲染性能" class="headerlink" title="4、will-change提高页面滚动、动画等渲染性能"></a>4、will-change提高页面滚动、动画等渲染性能</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/* 关键字值 */</span></div><div class="line"><span class="selector-tag">will-change</span>: <span class="selector-tag">auto</span>;</div><div class="line"><span class="selector-tag">will-change</span>: <span class="selector-tag">scroll-position</span>;</div><div class="line"><span class="selector-tag">will-change</span>: <span class="selector-tag">contents</span>;</div><div class="line"><span class="selector-tag">will-change</span>: <span class="selector-tag">transform</span>;        <span class="comment">/* &lt;custom-ident&gt;示例 */</span></div><div class="line"><span class="selector-tag">will-change</span>: <span class="selector-tag">opacity</span>;          <span class="comment">/* &lt;custom-ident&gt;示例 */</span></div><div class="line"><span class="selector-tag">will-change</span>: <span class="selector-tag">left</span>, <span class="selector-tag">top</span>;        <span class="comment">/* 两个&lt;animateable-feature&gt;示例 */</span></div></pre></td></tr></table></figure>
+<p>will-change的使用也要谨慎，遵循最小化影响原则，不要这样直接写在默认状态中：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-class">.will-change</span> &#123;</div><div class="line">  <span class="attribute">will-change</span>: transform;</div><div class="line">  <span class="attribute">transition</span>: transform <span class="number">0.3s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.will-change</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以让父元素hover的时候，声明will-change，这样，移出的时候就会自动remove，触发的范围基本上是有效元素范围。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-class">.will-change-parent</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.will-change</span> &#123;</div><div class="line">  <span class="attribute">will-change</span>: transform;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.will-change</span> &#123;</div><div class="line">  <span class="attribute">transition</span>: transform <span class="number">0.3s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.will-change</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5、pc和wap通用的性能优化"><a href="#5、pc和wap通用的性能优化" class="headerlink" title="5、pc和wap通用的性能优化"></a>5、pc和wap通用的性能优化</h4><blockquote>
+<ul>
+<li><p>利用缓存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">缓存Ajax</div><div class="line"></div><div class="line">使用CDN (CDN的基本原理是广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对集中的地区或网络中，在用户访问网站时，利用全局负载技术将用户的访问指向距离最近的工作正常的缓存服务器上，由缓存服务器直接响应用户请求)</div><div class="line"></div><div class="line">服务端配置Etags (实体标签，HTTP协议的一部分，用一个特殊的字符串来标识某个资源的“版本”，客户端（浏览器）来请求的时候，可以比较，如果ETag一致，则表示该资源并没有修改过，客户端（浏览器）可以使用自己缓存的版本)</div><div class="line"></div><div class="line">减少DNS查找</div></pre></td></tr></table></figure>
+</li>
+<li><p>减少HTTP请求（雪碧图，文件合并等),初始首屏之外的图片资源按需加载。</p>
+</li>
+<li>代码层面的优化：少用全局变量、减少DOM操作次数、缓存DOM节点查找的结果、避免图片和iFrame等的空Src(空Src会重新加载当前页面，影响速度和效率)、避免使用CSS Expression</li>
+</ul>
+</blockquote>
+<h4 id="6、移动页面性能优化"><a href="#6、移动页面性能优化" class="headerlink" title="6、移动页面性能优化"></a>6、移动页面性能优化</h4><p><img src="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141205/1417746123387641.jpg" alt="1"></p>
+<p>加载中的优化：</p>
+<blockquote>
+<ul>
+<li><p>预加载: 显式预加载（loading提示） 、隐性加载（slide滚动图的后面图片的加载）</p>
+</li>
+<li><p>按需加载: 首屏加载  、 响应式加载</p>
+</li>
+<li><p>压缩图片</p>
+</li>
+<li><p>尽量避免重定向<br><img src="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141205/1417746126325962.jpg" alt="2"></p>
+</li>
+<li><p>使用其他方式加载图片 ：css3绘制图片 、使用iconfont代替图片。</p>
+</li>
+</ul>
+</blockquote>
+<p>脚本的执行的优化：</p>
+<blockquote>
+<ul>
+<li><p>尽量避免DataURI: 生成的代码文件相对图片文件体积没有减少反而增大，而且浏览器在对这种base64解码过程中需要消耗内存和cpu，这个在移动端坏处特别明显。</p>
+</li>
+<li><p>点击事件优化:适当使用touchstart，touchend，touch等事件代替延迟比较大的click事件。</p>
+</li>
+</ul>
+</blockquote>
+<p>渲染阶段的优化：</p>
+<blockquote>
+<ul>
+<li><p>动画优化: 尽量使用css3动画(不占js主线程，可开启硬件加速，浏览器可以对动画做优化，不支持中间状态的监听)、适当使用canvas动画(可规避渲染树的计算，渲染更快，开发成本高)、合理使用RAF–requestAnimationFrame(能解决脚本问题引起的丢帧，卡顿问题，支持中间状态监听)</p>
+</li>
+<li><p>高频事件优化: 类似touchmove，scroll这类的事件可导致多次渲染,增加响应变化的时间间隔，减少重绘次数。</p>
+</li>
+</ul>
+</blockquote>
+<p>合成/绘制优化：</p>
+<blockquote>
+<ul>
+<li>GPU加速，触发GPU加速的方式：CSS3 transitions、 CSS3 3D transforms(transform: translateZ(0) )、will-change</li>
+</ul>
+</blockquote>
+<p>总结<br><img src="http://ossweb-img.qq.com/upload/webplat/info/tgideas/20141205/1417746129250017.jpg" alt="3"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,19 +303,97 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/01/02/html5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/12/25/logic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          逻辑思维
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/02/05/packetOperator/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">分组操作符</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -230,9 +423,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
