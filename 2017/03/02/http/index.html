@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: es6 | moedong&#39; personal blog</title>
+  <title>http | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="moedong' personal blog">
-<meta property="og:url" content="http://yoursite.com/tags/es6/index.html">
+  <meta name="description" content="HTTP method GET 是最常用的方法，用于请求服务器发送某个资源 HEAD和GET类似，但服务器在响应中只返回首部，不返回实体的主体部分 POST 主要是用来向服务器提交表单数据 PUT  让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，如果那个URL已经存在的话，就用这个主体代替他。（服务器创建文档） TRACE  用于验证请求是否如愿穿过了请求/响应链。目的服务器端发">
+<meta name="keywords" content="js,http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http">
+<meta property="og:url" content="http://yoursite.com/2017/03/02/http/index.html">
 <meta property="og:site_name" content="moedong' personal blog">
+<meta property="og:description" content="HTTP method GET 是最常用的方法，用于请求服务器发送某个资源 HEAD和GET类似，但服务器在响应中只返回首部，不返回实体的主体部分 POST 主要是用来向服务器提交表单数据 PUT  让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，如果那个URL已经存在的话，就用这个主体代替他。（服务器创建文档） TRACE  用于验证请求是否如愿穿过了请求/响应链。目的服务器端发">
+<meta property="og:updated_time" content="2017-04-25T04:47:38.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="moedong' personal blog">
+<meta name="twitter:title" content="http">
+<meta name="twitter:description" content="HTTP method GET 是最常用的方法，用于请求服务器发送某个资源 HEAD和GET类似，但服务器在响应中只返回首部，不返回实体的主体部分 POST 主要是用来向服务器提交表单数据 PUT  让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，如果那个URL已经存在的话，就用这个主体代替他。（服务器创建文档） TRACE  用于验证请求是否如愿穿过了请求/响应链。目的服务器端发">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -143,278 +148,243 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-http" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      http
+    </h1>
+  
+
+        
+        <a href="/2017/03/02/http/" class="archive-article-date">
+  	<time datetime="2017-03-02T01:24:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
+</a>
+        
+        
+      </header>
     
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共2,190字</span>，
+      <span>阅读时间9分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="HTTP-method"><a href="#HTTP-method" class="headerlink" title="HTTP method"></a>HTTP method</h4><ul>
+<li>GET 是最常用的方法，用于请求服务器发送某个资源</li>
+<li>HEAD和GET类似，但服务器在响应中只返回首部，不返回实体的主体部分</li>
+<li>POST 主要是用来向服务器提交表单数据</li>
+<li>PUT  让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，如果那个URL已经存在的话，就用这个主体代替他。（服务器创建文档）</li>
+<li>TRACE  用于验证请求是否如愿穿过了请求/响应链。目的服务器端发起一个环回请求诊断，最后一站的服务器会弹回一个TRACE响应并在响应体中携带它收到的原始请求报文。</li>
+<li>OPTIONS 请求服务器告知其支持的各种功能。查询服务器支持哪些方法。</li>
+<li>DELETE  请求服务器删除请求URL指定的资源。</li>
+</ul>
+<a id="more"></a>
+<h4 id="HTTP状态码及其含义"><a href="#HTTP状态码及其含义" class="headerlink" title="HTTP状态码及其含义"></a>HTTP状态码及其含义</h4><p>  1XX：信息状态码</p>
+<pre><code>&gt; * 100 Continue：客户端应当继续发送请求。这个临时相应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求万仇向客户端发送一个最终响应
+&gt; * 101 Switching Protocols：服务器已经理解力客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到Upgrade消息头中定义的那些协议。
+</code></pre><p>  2XX：成功状态码</p>
+<pre><code>* 200 OK：请求成功，请求所希望的响应头或数据体将随此响应返回
+* 201 Created：
+* 202 Accepted：
+* 203 Non-Authoritative Information：
+* 204 No Content：
+* 205 Reset Content：
+* 206 Partial Content：
+</code></pre><p>  3XX：重定向</p>
+<pre><code>* 300 Multiple Choices：
+* 301 Moved Permanently：
+* 302 Found：
+* 303 See Other：
+* 304 Not Modified：
+* 305 Use Proxy：
+* 306 （unused）：
+* 307 Temporary Redirect：
+</code></pre><p>  4XX：客户端错误</p>
+<pre><code>* 400 Bad Request:
+* 401 Unauthorized:
+* 402 Payment Required:
+* 403 Forbidden:
+* 404 Not Found:
+* 405 Method Not Allowed:
+* 406 Not Acceptable:
+* 407 Proxy Authentication Required:
+* 408 Request Timeout:
+* 409 Conflict:
+* 410 Gone:
+* 411 Length Required:
+* 412 Precondition Failed:
+* 413 Request Entity Too Large:
+* 414 Request-URI Too Long:
+* 415 Unsupported Media Type:
+* 416 Requested Range Not Satisfiable:
+* 417 Expectation Failed:
+</code></pre><p>  5XX: 服务器错误</p>
+<pre><code>* 500 Internal Server Error:
+* 501 Not Implemented:
+* 502 Bad Gateway:
+* 503 Service Unavailable:
+* 504 Gateway Timeout:
+* 505 HTTP Version Not Supported:
+</code></pre><h4 id="HTTP-request报文结构"><a href="#HTTP-request报文结构" class="headerlink" title="HTTP request报文结构"></a>HTTP request报文结构</h4><blockquote>
+<p>1.首行是Request-Line包括：请求方法，请求URI，协议版本，CRLF<br>2.首行之后是若干行请求头，包括general-header，request-header或者entity-header，每个一行以CRLF结束<br>3.请求头和消息实体之间有一个CRLF分隔<br>4.根据实际请求需要可能包含一个消息实体 一个请求报文例子如下：</p>
+</blockquote>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">GET</span> <span class="string">/Protocols/rfc2616/rfc2616-sec5.html</span> HTTP/1.1</div><div class="line"><span class="attribute">Host</span>: www.w3.org</div><div class="line"><span class="attribute">Connection</span>: keep-alive</div><div class="line"><span class="attribute">Cache-Control</span>: max-age=0</div><div class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36</div><div class="line"><span class="attribute">Referer</span>: https://www.google.com.hk/</div><div class="line"><span class="attribute">Accept-Encoding</span>: gzip,deflate,sdch</div><div class="line"><span class="attribute">Accept-Language</span>: zh-CN,zh;q=0.8,en;q=0.6</div><div class="line"><span class="attribute">Cookie</span>: authorstyle=yes</div><div class="line"><span class="attribute">If-None-Match</span>: "2cc8-3e3073913b100"</div><div class="line"><span class="attribute">If-Modified-Since</span>: Wed, 01 Sep 2004 13:24:52 GMT</div><div class="line"></div><div class="line"><span class="undefined">name=qiu&amp;age=25</span></div></pre></td></tr></table></figure>
+<h4 id="HTTP-response报文结构"><a href="#HTTP-response报文结构" class="headerlink" title="HTTP response报文结构"></a>HTTP response报文结构</h4><blockquote>
+<p>1.首行是状态行包括：HTTP版本，状态码，状态描述，后面跟一个CRLF<br>2.首行之后是若干行响应头，包括：通用头部，响应头部，实体头部<br>3.响应头部和响应实体之间用一个CRLF空行分隔<br>最后是一个可能的消息实体 响应报文例子如下：</p>
+</blockquote>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">HTTP/1.1 <span class="number">200</span> OK</div><div class="line"><span class="attribute">Date</span>: Tue, 08 Jul 2014 05:28:43 GMT</div><div class="line"><span class="attribute">Server</span>: Apache/2</div><div class="line"><span class="attribute">Last-Modified</span>: Wed, 01 Sep 2004 13:24:52 GMT</div><div class="line"><span class="attribute">ETag</span>: "40d7-3e3073913b100"</div><div class="line"><span class="attribute">Accept-Ranges</span>: bytes</div><div class="line"><span class="attribute">Content-Length</span>: 16599</div><div class="line"><span class="attribute">Cache-Control</span>: max-age=21600</div><div class="line"><span class="attribute">Expires</span>: Tue, 08 Jul 2014 11:28:43 GMT</div><div class="line"><span class="attribute">P3P</span>: policyref="http://www.w3.org/2001/05/P3P/p3p.xml"</div><div class="line"><span class="attribute">Content-Type</span>: text/html; charset=iso-8859-1</div><div class="line"></div><div class="line"><span class="javascript">&#123;<span class="string">"name"</span>: <span class="string">"qiu"</span>, <span class="string">"age"</span>: <span class="number">25</span>&#125;</span></div></pre></td></tr></table></figure>
+<h4 id="从浏览器地址栏输入url到显示页面的步骤"><a href="#从浏览器地址栏输入url到显示页面的步骤" class="headerlink" title="从浏览器地址栏输入url到显示页面的步骤"></a>从浏览器地址栏输入url到显示页面的步骤</h4><p>1.在浏览器地址栏输入URL</p>
+<p>2.浏览器查看缓存，如果请求资源在缓存中并且新鲜，跳转到转码步骤<br>&emsp;&emsp;i.如果资源未缓存，发起新请求<br>&emsp;&emsp;ii.如果已缓存，检验是否足够新鲜，足够新鲜直接提供给客户端，否则与服务器进行验证。<br>&emsp;&emsp;iii.检验新鲜通常有两个HTTP头进行控制Expires和Cache-Control：<br>&emsp;&emsp;&emsp;&emsp;HTTP1.0提供Expires，值为一个绝对时间表示缓存新鲜日期<br>&emsp;&emsp;&emsp;&emsp;HTTP1.1增加了Cache-Control: max-age=,值为以秒为单位的最大新鲜时间</p>
+<p>3.浏览器解析URL获取协议，主机，端口，path</p>
+<p>4.浏览器组装一个HTTP（GET）请求报文</p>
+<p>5.浏览器获取主机ip地址，过程如下：<br>&emsp;&emsp;i.浏览器缓存<br>&emsp;&emsp;ii.本机缓存<br>&emsp;&emsp;iii.hosts文件<br>&emsp;&emsp;iv.路由器缓存<br>&emsp;&emsp;v.ISP DNS缓存<br>&emsp;&emsp;vi.DNS递归查询（可能存在负载均衡导致每次IP不一样）</p>
+<p>6.打开一个socket与目标IP地址，端口建立TCP链接，三次握手如下：</p>
+<p>&emsp;&emsp;i.客户端发送一个TCP的SYN=1，Seq=X的包到服务器端口<br>&emsp;&emsp;ii.服务器发回SYN=1， ACK=X+1， Seq=Y的响应包<br>&emsp;&emsp;iii.客户端发送ACK=Y+1， Seq=Z</p>
+<p>7.TCP链接建立后发送HTTP请求</p>
+<p>8.服务器接受请求并解析，将请求转发到服务程序，如虚拟主机使用HTTP Host头部判断请求的服务程序</p>
+<p>9.服务器检查HTTP请求头是否包含缓存验证信息如果验证缓存新鲜，返回304等对应状态码</p>
+<p>10.处理程序读取完整请求并准备HTTP响应，可能需要查询数据库等操作</p>
+<p>11.服务器将响应报文通过TCP连接发送回浏览器</p>
+<p>12.浏览器接收HTTP响应，然后根据情况选择关闭TCP连接或者保留重用，关闭TCP连接的四次握手如下：<br>&emsp;&emsp;i.主动方发送Fin=1， Ack=Z， Seq= X报文<br>&emsp;&emsp;ii.被动方发送ACK=X+1， Seq=Z报文<br>&emsp;&emsp;iii.被动方发送Fin=1， ACK=X， Seq=Y报文<br>&emsp;&emsp;iv.主动方发送ACK=Y， Seq=X报文</p>
+<p>13.浏览器检查响应状态吗：是否为1XX，3XX， 4XX， 5XX，这些情况处理与2XX不同</p>
+<p>14.如果资源可缓存，进行缓存</p>
+<p>15.对响应进行解码（例如gzip压缩）</p>
+<p>16.根据资源类型决定如何处理（假设资源为HTML文档）</p>
+<p>17.解析HTML文档，构件DOM树，下载资源，构造CSSOM树，执行js脚本，这些操作没有严格的先后顺序，以下分别解释</p>
+<p>18.构建DOM树：<br>&emsp;&emsp;i.Tokenizing：根据HTML规范将字符流解析为标记<br>&emsp;&emsp;ii.Lexing：词法分析将标记转换为对象并定义属性和规则<br>&emsp;&emsp;iii.DOM construction：根据HTML标记关系将对象组成DOM树</p>
+<p>19.解析过程中遇到图片、样式表、js文件，启动下载</p>
+<p>20.构建CSSOM树：<br>&emsp;&emsp;i.Tokenizing：字符流转换为标记流<br>&emsp;&emsp;ii.Node：根据标记创建节点<br>&emsp;&emsp;iii.CSSOM：节点创建CSSOM树</p>
+<p>21.根据DOM树和CSSOM树构建渲染树:</p>
+<p>&emsp;&emsp;i.从DOM树的根节点遍历所有可见节点，不可见节点包括：1）script,meta这样本身不可见的标签。2)被css隐藏的节点，如display: none<br>&emsp;&emsp;ii.对每一个可见节点，找到恰当的CSSOM规则并应用<br>&emsp;&emsp;iii.发布可视节点的内容和计算样式</p>
+<p>22.js解析如下：</p>
+<p>&emsp;&emsp;i.浏览器创建Document对象并解析HTML，将解析到的元素和文本节点添加到文档中，此时document.readystate为loading</p>
+<p>&emsp;&emsp;ii.HTML解析器遇到<code>没有</code> <code>async</code>和<code>defer</code>的script时，将他们添加到文档中，然后执行行内或外部脚本。<code>这些脚本会同步执行，并且在脚本下载和执行时解析器会暂停</code>。<code>这样就可以用document.write()
+把文本插入到输入流中</code>。同步脚本经常简单定义函数和注册事件处理程序，他们可以遍历和操作script和他们之前的文档内容</p>
+<p>&emsp;&emsp;iii.当解析器遇到设置了<code>async</code>属性的<code>script</code>时，开始下载脚本并继续解析文档。<code>脚本会在它下载完成后尽快执行，但是解析器不会停下来等它下载</code>。<code>异步脚本禁止使用document.write()</code>，它们可以访问自己script和之前的文档元素</p>
+<p>&emsp;&emsp;iv.当文档完成解析，document.readState变成interactive</p>
+<p>&emsp;&emsp;vi.浏览器在Document对象上触发DOMContentLoaded事件</p>
+<p>&emsp;&emsp;vii.此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等这些内容完成载入并且所有异步脚本完成载入和执行，document.readState变为complete,window触发load事件</p>
+<p>23.显示页面（HTML解析过程中会逐步显示页面）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/object/" class="archive-article-date">
-  	<time datetime="2017-04-18T02:55:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/object/">对象的拓展</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">object</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/02/http/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/17/function-context/" class="archive-article-date">
-  	<time datetime="2017-04-17T11:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/17/function-context/">函数拓展之：length属性和作用域</a>
-    </h1>
+    <a href="/2017/02/04/html5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          关于H5平时工作中的一些知识点总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/15/vue-project1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于vue2 + vue-router2 + vuex + axios 的一个webapp项目</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">length</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">context</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/09/function-spread/" class="archive-article-date">
-  	<time datetime="2017-04-09T09:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/09/function-spread/">函数拓展之：拓展运算符（...）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">...</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/07/function-rest/" class="archive-article-date">
-  	<time datetime="2017-04-07T09:04:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/07/function-rest/">函数拓展之：rest参数（...变量名）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">rest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/03/destructuring/" class="archive-article-date">
-  	<time datetime="2017-04-03T03:10:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/03/destructuring/">变量解构赋值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解构赋值</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/01/promise/" class="archive-article-date">
-  	<time datetime="2017-04-01T06:51:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/01/promise/">Promise对象的基本理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Promise</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -444,9 +414,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

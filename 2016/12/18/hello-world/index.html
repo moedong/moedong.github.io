@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: es6 | moedong&#39; personal blog</title>
+  <title>Hexo(yilia)+Github构建个人博客错误收集 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="moedong' personal blog">
-<meta property="og:url" content="http://yoursite.com/tags/es6/index.html">
+  <meta name="description" content="1. 报错： ERROR Plugin load failed: hexo-generator-json-content按照这篇教程 一步步走，然后执行 hexo s，打开 http://localhost:4000/  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示     缺少模块， 需要在根目录下导入该包hexo-generator-json-content">
+<meta name="keywords" content="hexo,github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo(yilia)+Github构建个人博客错误收集">
+<meta property="og:url" content="http://yoursite.com/2016/12/18/hello-world/index.html">
 <meta property="og:site_name" content="moedong' personal blog">
+<meta property="og:description" content="1. 报错： ERROR Plugin load failed: hexo-generator-json-content按照这篇教程 一步步走，然后执行 hexo s，打开 http://localhost:4000/  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示     缺少模块， 需要在根目录下导入该包hexo-generator-json-content">
+<meta property="og:updated_time" content="2017-04-25T03:45:23.903Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="moedong' personal blog">
+<meta name="twitter:title" content="Hexo(yilia)+Github构建个人博客错误收集">
+<meta name="twitter:description" content="1. 报错： ERROR Plugin load failed: hexo-generator-json-content按照这篇教程 一步步走，然后执行 hexo s，打开 http://localhost:4000/  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示     缺少模块， 需要在根目录下导入该包hexo-generator-json-content">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -143,278 +148,148 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo(yilia)+Github构建个人博客错误收集
+    </h1>
+  
+
+        
+        <a href="/2016/12/18/hello-world/" class="archive-article-date">
+  	<time datetime="2016-12-18T11:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-18</time>
+</a>
+        
+        
+      </header>
     
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共216字</span>，
+      <span>阅读时间1分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-报错：-ERROR-Plugin-load-failed-hexo-generator-json-content"><a href="#1-报错：-ERROR-Plugin-load-failed-hexo-generator-json-content" class="headerlink" title="1. 报错： ERROR Plugin load failed: hexo-generator-json-content"></a>1. 报错： <code>ERROR Plugin load failed: hexo-generator-json-content</code></h3><p>按照<a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">这篇教程</a> 一步步走，然后执行 hexo s，打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示  </p>
+<blockquote>
+<ul>
+<li>缺少模块， 需要在根目录下导入该包hexo-generator-json-content。</li>
+<li>配置根目录下的 _config.xml文件，配置代码有提示。</li>
+</ul>
+</blockquote>
+<p>当导入完包后,重新执行 hexo g ，cmd上面报错了 <code>ERROR Plugin load failed: hexo-generator-json-content</code>,查找相关的文章资料，是由于node版过低造成的，解决办法是 把node升级到6.0版本及以上。</p>
+<a id="more"></a>
+<h3 id="2-报错：ERROR-Deployer-not-found-github"><a href="#2-报错：ERROR-Deployer-not-found-github" class="headerlink" title="2. 报错：ERROR Deployer not found: github"></a>2. 报错：<code>ERROR Deployer not found: github</code></h3><p>解决办法：在根目录下 run  <code>npm install hexo-deployer-git --save</code>，将 _config.xml 中的 deploy 的type的值 改为 git </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:xxx/xxx.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/object/" class="archive-article-date">
-  	<time datetime="2017-04-18T02:55:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/object/">对象的拓展</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">object</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/12/18/hello-world/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/17/function-context/" class="archive-article-date">
-  	<time datetime="2017-04-17T11:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/17/function-context/">函数拓展之：length属性和作用域</a>
-    </h1>
+  
+    <a href="/2016/12/25/logic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">逻辑思维</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">length</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">context</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/09/function-spread/" class="archive-article-date">
-  	<time datetime="2017-04-09T09:05:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/09/function-spread/">函数拓展之：拓展运算符（...）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">...</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/07/function-rest/" class="archive-article-date">
-  	<time datetime="2017-04-07T09:04:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/07/function-rest/">函数拓展之：rest参数（...变量名）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">rest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/03/destructuring/" class="archive-article-date">
-  	<time datetime="2017-04-03T03:10:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/03/destructuring/">变量解构赋值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解构赋值</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/01/promise/" class="archive-article-date">
-  	<time datetime="2017-04-01T06:51:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/01/promise/">Promise对象的基本理解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Promise</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -444,9 +319,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
