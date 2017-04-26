@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/02/http/index.html">
 <meta property="og:site_name" content="moedong' personal blog">
 <meta property="og:description" content="HTTP method GET 是最常用的方法，用于请求服务器发送某个资源 HEAD和GET类似，但服务器在响应中只返回首部，不返回实体的主体部分 POST 主要是用来向服务器提交表单数据 PUT  让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，如果那个URL已经存在的话，就用这个主体代替他。（服务器创建文档） TRACE  用于验证请求是否如愿穿过了请求/响应链。目的服务器端发">
-<meta property="og:updated_time" content="2017-04-25T04:47:38.364Z">
+<meta property="og:updated_time" content="2017-04-26T00:00:30.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http">
 <meta name="twitter:description" content="HTTP method GET 是最常用的方法，用于请求服务器发送某个资源 HEAD和GET类似，但服务器在响应中只返回首部，不返回实体的主体部分 POST 主要是用来向服务器提交表单数据 PUT  让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档，如果那个URL已经存在的话，就用这个主体代替他。（服务器创建文档） TRACE  用于验证请求是否如愿穿过了请求/响应链。目的服务器端发">
@@ -169,7 +169,7 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共2,190字</span>，
+      <span>本文共2,362字</span>，
       <span>阅读时间9分钟</span>
       </p>
     </div>
@@ -238,7 +238,7 @@
 <h4 id="HTTP-response报文结构"><a href="#HTTP-response报文结构" class="headerlink" title="HTTP response报文结构"></a>HTTP response报文结构</h4><blockquote>
 <p>1.首行是状态行包括：HTTP版本，状态码，状态描述，后面跟一个CRLF<br>2.首行之后是若干行响应头，包括：通用头部，响应头部，实体头部<br>3.响应头部和响应实体之间用一个CRLF空行分隔<br>最后是一个可能的消息实体 响应报文例子如下：</p>
 </blockquote>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">HTTP/1.1 <span class="number">200</span> OK</div><div class="line"><span class="attribute">Date</span>: Tue, 08 Jul 2014 05:28:43 GMT</div><div class="line"><span class="attribute">Server</span>: Apache/2</div><div class="line"><span class="attribute">Last-Modified</span>: Wed, 01 Sep 2004 13:24:52 GMT</div><div class="line"><span class="attribute">ETag</span>: "40d7-3e3073913b100"</div><div class="line"><span class="attribute">Accept-Ranges</span>: bytes</div><div class="line"><span class="attribute">Content-Length</span>: 16599</div><div class="line"><span class="attribute">Cache-Control</span>: max-age=21600</div><div class="line"><span class="attribute">Expires</span>: Tue, 08 Jul 2014 11:28:43 GMT</div><div class="line"><span class="attribute">P3P</span>: policyref="http://www.w3.org/2001/05/P3P/p3p.xml"</div><div class="line"><span class="attribute">Content-Type</span>: text/html; charset=iso-8859-1</div><div class="line"></div><div class="line"><span class="javascript">&#123;<span class="string">"name"</span>: <span class="string">"qiu"</span>, <span class="string">"age"</span>: <span class="number">25</span>&#125;</span></div></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">HTTP/1.1 <span class="number">200</span> OK</div><div class="line"><span class="attribute">Date</span>: Tue, 08 Jul 2014 05:28:43 GMT</div><div class="line"><span class="attribute">Server</span>: Apache/2</div><div class="line"><span class="attribute">Last-Modified</span>: Wed, 01 Sep 2004 13:24:52 GMT</div><div class="line"><span class="attribute">ETag</span>: "40d7-3e3073913b100"</div><div class="line"><span class="attribute">Accept-Ranges</span>: bytes</div><div class="line"><span class="attribute">Content-Length</span>: 16599</div><div class="line"><span class="attribute">Cache-Control</span>: max-age=21600</div><div class="line"><span class="attribute">Expires</span>: Tue, 08 Jul 2014 11:28:43 GMT</div><div class="line"><span class="attribute">P3P</span>: policyref="http://www.w3.org/2001/05/P3P/p3p.xml"</div><div class="line"><span class="attribute">Content-Type</span>: text/html; charset=iso-8859-1</div><div class="line"></div><div class="line"><span class="undefined">&#123;"name": "qiu", "age": 25&#125;</span></div></pre></td></tr></table></figure>
 <h4 id="从浏览器地址栏输入url到显示页面的步骤"><a href="#从浏览器地址栏输入url到显示页面的步骤" class="headerlink" title="从浏览器地址栏输入url到显示页面的步骤"></a>从浏览器地址栏输入url到显示页面的步骤</h4><p>1.在浏览器地址栏输入URL</p>
 <p>2.浏览器查看缓存，如果请求资源在缓存中并且新鲜，跳转到转码步骤<br>&emsp;&emsp;i.如果资源未缓存，发起新请求<br>&emsp;&emsp;ii.如果已缓存，检验是否足够新鲜，足够新鲜直接提供给客户端，否则与服务器进行验证。<br>&emsp;&emsp;iii.检验新鲜通常有两个HTTP头进行控制Expires和Cache-Control：<br>&emsp;&emsp;&emsp;&emsp;HTTP1.0提供Expires，值为一个绝对时间表示缓存新鲜日期<br>&emsp;&emsp;&emsp;&emsp;HTTP1.1增加了Cache-Control: max-age=,值为以秒为单位的最大新鲜时间</p>
 <p>3.浏览器解析URL获取协议，主机，端口，path</p>
@@ -271,7 +271,13 @@
 <p>&emsp;&emsp;vi.浏览器在Document对象上触发DOMContentLoaded事件</p>
 <p>&emsp;&emsp;vii.此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等这些内容完成载入并且所有异步脚本完成载入和执行，document.readState变为complete,window触发load事件</p>
 <p>23.显示页面（HTML解析过程中会逐步显示页面）</p>
-
+<h4 id="创建ajax过程"><a href="#创建ajax过程" class="headerlink" title="创建ajax过程"></a>创建ajax过程</h4><p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
+<p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
+<p>(3)设置响应HTTP请求状态变化的函数.</p>
+<p>(4)发送HTTP请求.</p>
+<p>(5)获取异步调用返回的数据.</p>
+<p>(6)使用JavaScript和DOM实现局部刷新.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line"></div><div class="line">xmlHttp.open(<span class="string">'GET'</span>,<span class="string">'demo.php'</span>,<span class="string">'true'</span>);</div><div class="line"><span class="comment">//第三个参数设置请求是否为异步模式。如果是TRUE，JavaScript函数将继续执行，而不等待服务器响应。当状态改变时会调用onreadystatechange属性指定的回调函数</span></div><div class="line"></div><div class="line">xmlHttp.send()</div><div class="line"></div><div class="line">xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(xmlHttp.readyState === <span class="number">4</span> &amp; xmlHttp.status === <span class="number">200</span>)&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -485,6 +491,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">length</a>
               </li>
              
@@ -493,15 +503,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">rest</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,11 +523,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,10 +539,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">()</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Promise</a>
               </li>
              
@@ -546,6 +548,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">()</a>
               </li>
              
               <li class="article-tag-list-item">

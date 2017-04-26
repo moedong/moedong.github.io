@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>分组操作符 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="括号 () 是一个分组操作符，它的内部只能包含表达式,不能包含语句  函数表达式和函数声明，两者如何区别： 函数声明: &amp;emsp;&amp;emsp;function 函数名称 (参数：可选){ 函数体 } 函数表达式： &amp;emsp;&amp;emsp;function (参数：可选){ 函数体 }">
+  <meta name="description" content="括号() 是一个分组操作符，它的内部只能包含表达式（由 运算元 和 运算符(可选) 构成，并产生运算结果的语法结构）,不能包含语句    函数表达式和函数声明，两者如何区别： 函数声明: &amp;emsp;&amp;emsp;function 函数名称 (参数：可选){ 函数体 } 函数表达式： &amp;emsp;&amp;emsp;function (参数：可选){ 函数体 }">
 <meta name="keywords" content="js,()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分组操作符">
 <meta property="og:url" content="http://yoursite.com/2017/02/05/packetOperator/index.html">
 <meta property="og:site_name" content="moedong' personal blog">
-<meta property="og:description" content="括号 () 是一个分组操作符，它的内部只能包含表达式,不能包含语句  函数表达式和函数声明，两者如何区别： 函数声明: &amp;emsp;&amp;emsp;function 函数名称 (参数：可选){ 函数体 } 函数表达式： &amp;emsp;&amp;emsp;function (参数：可选){ 函数体 }">
-<meta property="og:updated_time" content="2017-04-25T04:52:20.517Z">
+<meta property="og:description" content="括号() 是一个分组操作符，它的内部只能包含表达式（由 运算元 和 运算符(可选) 构成，并产生运算结果的语法结构）,不能包含语句    函数表达式和函数声明，两者如何区别： 函数声明: &amp;emsp;&amp;emsp;function 函数名称 (参数：可选){ 函数体 } 函数表达式： &amp;emsp;&amp;emsp;function (参数：可选){ 函数体 }">
+<meta property="og:updated_time" content="2017-04-25T06:49:35.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分组操作符">
-<meta name="twitter:description" content="括号 () 是一个分组操作符，它的内部只能包含表达式,不能包含语句  函数表达式和函数声明，两者如何区别： 函数声明: &amp;emsp;&amp;emsp;function 函数名称 (参数：可选){ 函数体 } 函数表达式： &amp;emsp;&amp;emsp;function (参数：可选){ 函数体 }">
+<meta name="twitter:description" content="括号() 是一个分组操作符，它的内部只能包含表达式（由 运算元 和 运算符(可选) 构成，并产生运算结果的语法结构）,不能包含语句    函数表达式和函数声明，两者如何区别： 函数声明: &amp;emsp;&amp;emsp;function 函数名称 (参数：可选){ 函数体 } 函数表达式： &amp;emsp;&amp;emsp;function (参数：可选){ 函数体 }">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -169,13 +169,16 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共289字</span>，
-      <span>阅读时间1分钟</span>
+      <span>本文共682字</span>，
+      <span>阅读时间2分钟</span>
       </p>
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong> 括号 () 是一个分组操作符，它的内部只能包含表达式,不能包含语句 </strong></p>
+        <blockquote>
+<p>括号() 是一个分组操作符，它的内部只能包含表达式（由 运算元 和 运算符(可选) 构成，并产生运算结果的语法结构）,不能包含语句 </p>
+</blockquote>
+<hr>
 <p>函数表达式和函数声明，两者如何区别：</p>
 <p>函数声明:</p>
 <p>&emsp;&emsp;function 函数名称 (参数：可选){ 函数体 }</p>
@@ -186,6 +189,14 @@
 <p>如果声明了函数名称的话，ECMAScript是通过上下文来区分的：</p>
 <p>&emsp;&emsp;如果function foo(){}是作为<strong>赋值表达式</strong>的一部分的话，那它就是一个函数表达式，<br>&emsp;&emsp;如果function foo(){}被<strong>包含在一个函数体内</strong>，或者位于<strong>程序的最顶部</strong>的话，那它就是一个函数声明。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">// 声明，因为它是程序的一部分</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;; <span class="comment">// 表达式，因为它是赋值表达式的一部分</span></div><div class="line"></div><div class="line"><span class="keyword">new</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;&#125;; <span class="comment">// 表达式，因为它是new表达式</span></div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">// 声明，因为它是函数体的一部分</span></div><div class="line">&#125;)();</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;); <span class="comment">// 函数表达式：包含在分组操作符内</span></div><div class="line"></div><div class="line"></div><div class="line">(<span class="keyword">var</span> x = <span class="number">5</span>); <span class="comment">// Unexpected token var。  分组操作符，只能包含表达式而不能包含语句：这里的var就是语句</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>在一个<code>表达式</code>后面加上括号()，该表达式会<code>立即执行</code>，但是在一个<code>语句</code>后面加上括号()，是完全不一样的意思，他的<code>只是分组操作符</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 下面这个function在语法上是没问题的，但是依然只是一个语句</span></div><div class="line"><span class="comment">// 加上括号()以后依然会报错，因为分组操作符需要包含表达式</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123; <span class="comment">/* code */</span> &#125;(); <span class="comment">// SyntaxError: Unexpected token )</span></div><div class="line"> </div><div class="line"><span class="comment">// 但是如果你在括弧()里传入一个表达式，将不会有异常抛出</span></div><div class="line"><span class="comment">// 但是foo函数依然不会执行</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123; <span class="comment">/* code */</span> &#125;( <span class="number">1</span> );</div><div class="line"> </div><div class="line"><span class="comment">// 因为它完全等价于下面这个代码，一个function声明后面，又声明了一个毫无关系的表达式： </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123; <span class="comment">/* code */</span> &#125;</div><div class="line"> </div><div class="line">( <span class="number">1</span> );</div></pre></td></tr></table></figure>
+<blockquote>
+<p>JavaScript里括弧()里面不能包含语句，所以在这一点上，解析器在解析function关键字的时候，会将相应的代码解析成function表达式，而不是function声明</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 由于括弧()和JS的&amp;&amp;，异或，逗号等操作符是在函数表达式和函数声明上消除歧义的</span></div><div class="line"><span class="comment">// 所以一旦解析器知道其中一个已经是表达式了，其它的也都默认为表达式了</span></div><div class="line"><span class="comment">// 不过，请注意下一章节的内容解释</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> i = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="number">10</span>; &#125; ();</div><div class="line"><span class="literal">true</span> &amp;&amp; <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</div><div class="line"><span class="number">0</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</div><div class="line"></div><div class="line"><span class="comment">// 如果你不在意返回值，或者不怕难以阅读</span></div><div class="line"><span class="comment">// 你甚至可以在function前面加一元操作符号</span></div><div class="line"></div><div class="line">!<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</div><div class="line">~<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</div><div class="line">-<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</div><div class="line">+<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</div></pre></td></tr></table></figure>
       
 
       
@@ -399,6 +410,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">length</a>
               </li>
              
@@ -407,15 +422,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">rest</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -427,11 +442,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,10 +458,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">()</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Promise</a>
               </li>
              
@@ -460,6 +467,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">()</a>
               </li>
              
               <li class="article-tag-list-item">
