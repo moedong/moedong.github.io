@@ -145,6 +145,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-koa2-practice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/13/koa2-practice/">koa2-生成环境部署注意事项</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/13/koa2-practice/" class="archive-article-date">
+  	<time datetime="2017-12-13T06:39:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共1,376字</span>，
+      <span>阅读时间6分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>koa2应用部署到生产环境,需要做一些安全配置。</p>
+</blockquote>
+<h6 id="1、安全性相关的HTTP头"><a href="#1、安全性相关的HTTP头" class="headerlink" title="1、安全性相关的HTTP头"></a>1、安全性相关的HTTP头</h6><p>以下是一些安全性相关的HTTP头，你的站点应该设置它们：</p>
+<blockquote>
+<ul>
+<li>Strict-Transport-Security：强制使用安全连接（SSL/TLS之上的HTTPS）来连接到服务器。</li>
+<li>X-Frame-Options：提供对于“点击劫持”的保护。</li>
+<li>X-XSS-Protection：开启大多现代浏览器内建的对于跨站脚本攻击（XSS）的过滤功能。</li>
+<li>X-Content-Type-Options： 防止浏览器使用MIME-sniffing来确定响应的类型，转而使用明确的content-type来确定。</li>
+<li>Content-Security-Policy：防止受到跨站脚本攻击以及其他跨站注入攻击。</li>
+</ul>
+</blockquote>
+<p>在Node.js中，这些都可以通过使用Helmet模块轻松设置完毕：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);  </span><br><span class="line"><span class="keyword">var</span> helmet = <span class="built_in">require</span>(<span class="string">'koa-helmet'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(helmet());</span><br></pre></td></tr></table></figure>
+<h6 id="2、设置-cookie-安全性选项"><a href="#2、设置-cookie-安全性选项" class="headerlink" title="2、设置 cookie 安全性选项"></a>2、设置 cookie 安全性选项</h6><p>设置以下 cookie 选项来增强安全性：</p>
+<blockquote>
+<ul>
+<li>secure - 确保浏览器只通过 HTTPS 发送 cookie。</li>
+<li>httpOnly - 确保 cookie 只通过 HTTP(S)（而不是客户机 JavaScript）发送，这有助于防御跨站点脚本编制攻击。</li>
+<li>domain - 表示 cookie 的域；用于和请求 URL 的服务器的域进行比较。如果匹配，那么接下来检查路径属性。</li>
+<li>path - 表示 cookie 的路径；用于和请求路径进行比较。如果路径和域都匹配，那么在请求中发送 cookie。</li>
+<li>expires - 用于为持久性 cookie 设置到期日期。</li>
+</ul>
+</blockquote>
+<h6 id="3、命令注入"><a href="#3、命令注入" class="headerlink" title="3、命令注入"></a>3、命令注入</h6><p>攻击者使用命令注入来在远程web服务器中运行系统命令。通过命令注入，攻击者甚至可以取得系统的密码。</p>
+<p>实践中，如果你有一个URL：</p>
+<p><code>https://example.com/downloads?file=user1.txt</code></p>
+<p>它可以变成：</p>
+<p><code>https://example.com/downloads?file=%3Bcat%20/etc/passwd</code></p>
+<p>在这个例子中，%3B会变成一个分号。所以将会运行多条系统命令。</p>
+<p>为了预防这类攻击，请确保总是检查过滤了用户的输入内容。</p>
+<p>我们也可以以Node.js的角度来说：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">child_process.exec(&apos;ls&apos;, function (err, data) &#123;  </span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在child_process.exec的底层，它调用了/bin/sh，所以它是一个bash解释器，而不仅仅是只能执行用户程序。</p>
+<p>当用户的输入是一个反引号或$()时，将它们传入这个方法就很危险了。</p>
+<p>可以通过使用<a href="http://javascript.ruanyifeng.com/nodejs/child-process.html" target="_blank" rel="external">child_process.execFile</a>来解决上面这个问题。</p>
+<h6 id="4、跨站请求伪造（CSRF）"><a href="#4、跨站请求伪造（CSRF）" class="headerlink" title="4、跨站请求伪造（CSRF）"></a>4、跨站请求伪造（CSRF）</h6><p>跨站请求伪造（CSRF）是一种迫使用户在他们已登录的web应用中，执行一个并非他们原意的操作的攻击手段。这种攻击常常用于那些会改变用户的状态的请求，通常它们并不窃取数据，因为攻击者并不能看到响应的内容。</p>
+<p>在Node.js中，你可以使用csrf模块来缓和这种攻击。它同样是非常底层的，你可能更喜欢使用如csurf这样的<a href="https://www.npmjs.com/package/koa-csrf" target="_blank" rel="external">koa-csrf</a>中间件。</p>
+<p>在路由层，可以会有如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> Koa <span class="keyword">from</span> <span class="string">'koa'</span>;</span><br><span class="line"><span class="keyword">import</span> bodyParser <span class="keyword">from</span> <span class="string">'koa-bodyparser'</span>;</span><br><span class="line"><span class="keyword">import</span> session <span class="keyword">from</span> <span class="string">'koa-generic-session'</span>;</span><br><span class="line"><span class="keyword">import</span> convert <span class="keyword">from</span> <span class="string">'koa-convert'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"> </span><br><span class="line"><span class="comment">// set the session keys </span></span><br><span class="line">app.keys = [ <span class="string">'a'</span>, <span class="string">'b'</span> ];</span><br><span class="line"> </span><br><span class="line"><span class="comment">// add session support </span></span><br><span class="line">app.use(convert(session()));</span><br><span class="line"> </span><br><span class="line"><span class="comment">// add body parsing </span></span><br><span class="line">app.use(bodyParser());</span><br><span class="line"> </span><br><span class="line"><span class="comment">// add the CSRF middleware </span></span><br><span class="line">app.use(<span class="keyword">new</span> CSRF(&#123;</span><br><span class="line">  invalidSessionSecretMessage: <span class="string">'Invalid session secret'</span>,</span><br><span class="line">  invalidSessionSecretStatusCode: <span class="number">403</span>,</span><br><span class="line">  invalidTokenMessage: <span class="string">'Invalid CSRF token'</span>,</span><br><span class="line">  invalidTokenStatusCode: <span class="number">403</span>,</span><br><span class="line">  excludedMethods: [ <span class="string">'GET'</span>, <span class="string">'HEAD'</span>, <span class="string">'OPTIONS'</span> ],</span><br><span class="line">  disableQuery: <span class="literal">false</span></span><br><span class="line">&#125;));</span><br><span class="line"> </span><br><span class="line"><span class="comment">// your middleware here (e.g. parse a form submit) </span></span><br><span class="line">app.use(<span class="function">(<span class="params">ctx, next</span>) =&gt;</span> &#123;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">if</span> (![ <span class="string">'GET'</span>, <span class="string">'POST'</span> ].includes(ctx.method))</span><br><span class="line">    <span class="keyword">return</span> next();</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">if</span> (ctx.method === <span class="string">'GET'</span>) &#123;</span><br><span class="line">    ctx.body = ctx.csrf;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  ctx.body = <span class="string">'OK'</span>;</span><br><span class="line"> </span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">app.listen();</span><br></pre></td></tr></table></figure>
+<p>在展示层，EJS Template：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/register"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"_csrf"</span> <span class="attr">value</span>=<span class="string">"&lt;%= csrf %&gt;"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"Email"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"Password"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Register<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="5、正则表达式"><a href="#5、正则表达式" class="headerlink" title="5、正则表达式"></a>5、正则表达式</h6><p>这类攻击主要是由于一些正则表达式，在极端情况下，会变得性能及其糟糕。这些正则被称为恶魔正则（Evil Regexes）：</p>
+<p>对于重复文本进行分组<br>在重复的分组内又有重复内容</p>
+<p>([a-zA-Z]+)*， (a+)+ 或 (a|a?)+在如aaaaaaaaaaaaaaaaaaaaaaaa! 这样的输入面前，都是脆弱的。这会引起大量的计算。更多详情可以参考ReDos。</p>
+<p>可以使用Node.js工具 <a href="https://www.npmjs.com/package/safe-regex" target="_blank" rel="external">safe-regex</a> 这检测你的正则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node safe.js &apos;(beep|boop)*&apos;</span><br><span class="line">true  </span><br><span class="line">$ node safe.js &apos;(a+)&#123;10&#125;&apos;</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+<h6 id="6、确保依赖项的安全"><a href="#6、确保依赖项的安全" class="headerlink" title="6、确保依赖项的安全"></a>6、确保依赖项的安全</h6><p>在管理应用程序的依赖项方面，npm 功能非常强大，而且使用方便。但是，您使用的软件包可能包含严重的安全漏洞，也可能会对应用程序产生影响。应用程序的安全取决于依赖项中“最弱”的一环。</p>
+<p>可以使用以下的任一或全部两种工具，帮助确保所使用的第三方软件包的安全性：nsp 和 requireSafe。这两种工具的功能大体相同。</p>
+<p>nsp 是一种命令行工具，用于检查 Node 安全项目漏洞数据库，确定应用程序是否使用具有已知漏洞的软件包。可通过以下命令安装该工具：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i nsp -g</span><br></pre></td></tr></table></figure>
+<p>使用以下命令将 npm-shrinkwrap.json 文件提交至 nodesecurity.io 以进行验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nsp audit-shrinkwrap</span><br></pre></td></tr></table></figure>
+<p>使用以下命令将 package.json 文件提交至 nodesecurity.io 以进行验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nsp audit-package</span><br></pre></td></tr></table></figure>
+<p>以下示例说明如何使用 requireSafe 来审计 Node 模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g requiresafe</span><br><span class="line">$ cd your-app</span><br><span class="line">$ requiresafe check</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/13/koa2-practice/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-koa2-uploadfile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1283,7 +1415,7 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共219字</span>，
+      <span>本文共305字</span>，
       <span>阅读时间1分钟</span>
       </p>
     </div>
@@ -1445,23 +1577,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">length</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">context</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rest</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1473,19 +1593,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">rest</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">koa2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1497,15 +1609,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">koa2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">()</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">object</a>
+                <a href="javascript:void(0)" class="js-tag color3">Promise</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Promise</a>
+                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1525,11 +1661,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
+                <a href="javascript:void(0)" class="js-tag color2">object</a>
               </li>
             
             <div class="clearfix"></div>
