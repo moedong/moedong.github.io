@@ -9,13 +9,13 @@
   <title>koa2-生成环境部署注意事项 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="koa2应用部署到生产环境,需要做一些安全配置。  1、安全性相关的HTTP头以下是一些安全性相关的HTTP头，你的站点应该设置它们：   Strict-Transport-Security：强制使用安全连接（SSL/TLS之上的HTTPS）来连接到服务器。 X-Frame-Options：提供对于“点击劫持”的保护。 X-XSS-Protection：开启大多现代浏览器内建的对于跨站脚本攻击（">
-<meta name="keywords" content="http,koa2,node">
+<meta name="keywords" content="koa2,node,http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="koa2-生成环境部署注意事项">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/koa2-practice/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
 <meta property="og:description" content="koa2应用部署到生产环境,需要做一些安全配置。  1、安全性相关的HTTP头以下是一些安全性相关的HTTP头，你的站点应该设置它们：   Strict-Transport-Security：强制使用安全连接（SSL/TLS之上的HTTPS）来连接到服务器。 X-Frame-Options：提供对于“点击劫持”的保护。 X-XSS-Protection：开启大多现代浏览器内建的对于跨站脚本攻击（">
-<meta property="og:updated_time" content="2017-12-13T07:11:48.268Z">
+<meta property="og:updated_time" content="2017-12-13T07:14:01.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="koa2-生成环境部署注意事项">
 <meta name="twitter:description" content="koa2应用部署到生产环境,需要做一些安全配置。  1、安全性相关的HTTP头以下是一些安全性相关的HTTP头，你的站点应该设置它们：   Strict-Transport-Security：强制使用安全连接（SSL/TLS之上的HTTPS）来连接到服务器。 X-Frame-Options：提供对于“点击劫持”的保护。 X-XSS-Protection：开启大多现代浏览器内建的对于跨站脚本攻击（">
@@ -188,6 +188,7 @@
 <li>Content-Security-Policy：防止受到跨站脚本攻击以及其他跨站注入攻击。</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <p>在Node.js中，这些都可以通过使用Helmet模块轻松设置完毕：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);  </span><br><span class="line"><span class="keyword">var</span> helmet = <span class="built_in">require</span>(<span class="string">'koa-helmet'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(helmet());</span><br></pre></td></tr></table></figure>
 <h6 id="2、设置-cookie-安全性选项"><a href="#2、设置-cookie-安全性选项" class="headerlink" title="2、设置 cookie 安全性选项"></a>2、设置 cookie 安全性选项</h6><p>设置以下 cookie 选项来增强安全性：</p>
@@ -244,15 +245,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
         		</li>
       		
 		</ul>
@@ -440,19 +441,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">length</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">context</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,7 +449,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
+                <a href="javascript:void(0)" class="js-tag color2">length</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">context</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,15 +465,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,6 +482,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">object</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,10 +526,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">object</a>
               </li>
             
             <div class="clearfix"></div>
