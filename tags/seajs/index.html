@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>函数拓展之：length属性和作用域 | moedong&#39; personal blog</title>
+  <title>Tag: seajs | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="函数length属性指定了默认值之后，函数的length属性只返回没有指定默认值的参数个数，也就是 指定默认值之后，length属性失真了。  lenght属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，rest参数也是不计入这个length属性的。如果设置默认值的参数不是尾参数，那么length属性也不再计入后面的参数了  123456">
-<meta name="keywords" content="es6,length,context">
-<meta property="og:type" content="article">
-<meta property="og:title" content="函数拓展之：length属性和作用域">
-<meta property="og:url" content="http://yoursite.com/2017/04/17/function-context/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="moedong&#39; personal blog">
+<meta property="og:url" content="http://yoursite.com/tags/seajs/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
-<meta property="og:description" content="函数length属性指定了默认值之后，函数的length属性只返回没有指定默认值的参数个数，也就是 指定默认值之后，length属性失真了。  lenght属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，rest参数也是不计入这个length属性的。如果设置默认值的参数不是尾参数，那么length属性也不再计入后面的参数了  123456">
-<meta property="og:updated_time" content="2017-04-18T03:52:16.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数拓展之：length属性和作用域">
-<meta name="twitter:description" content="函数length属性指定了默认值之后，函数的length属性只返回没有指定默认值的参数个数，也就是 指定默认值之后，length属性失真了。  lenght属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，rest参数也是不计入这个length属性的。如果设置默认值的参数不是尾参数，那么length属性也不再计入后面的参数了  123456">
+<meta name="twitter:title" content="moedong&#39; personal blog">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -148,176 +143,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-function-context" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      函数拓展之：length属性和作用域
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/12/14/gulp-seajs/" class="archive-article-date">
+  	<time datetime="2017-12-14T12:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/12/14/gulp-seajs/">gulp对seajs的模块做合并压缩</a>
     </h1>
   
 
-        
-        <a href="/2017/04/17/function-context/" class="archive-article-date">
-  	<time datetime="2017-04-17T11:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry">
-      <p style="text-align:right">
-      <span>本文共791字</span>，
-      <span>阅读时间3分钟</span>
-      </p>
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="函数length属性"><a href="#函数length属性" class="headerlink" title="函数length属性"></a>函数length属性</h2><p>指定了默认值之后，函数的length属性只返回没有指定默认值的参数个数，也就是 指定默认值之后，length属性失真了。</p>
-<blockquote>
-<p>lenght属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，rest参数也是不计入这个length属性的。<strong>如果设置默认值的参数不是尾参数，那么length属性也不再计入后面的参数了</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;&#125;).length <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a=<span class="number">5</span></span>)</span>&#123;&#125;).length <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a,b,c=<span class="number">5</span></span>)</span>&#123;&#125;).length <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;&#125;).length <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a,b=<span class="number">5</span>,c</span>)</span>&#123;&#125;).length <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a=<span class="number">5</span>,b,c</span>)</span>&#123;&#125;).length <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>一旦设置了参数的默认值，函数将进行声明初始化，参数将会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> x=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y=x</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(y);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="number">2</span>)  <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上面代码中，参数 <code>y</code>的默认值等于变量<code>x</code>。调用函数<code>f</code>时，参数形成了一个单独的作用域。在这个作用域里面，默认值变量<code>x</code>指向第一个参数<code>x</code>,而不是全局变量<code>x</code>，因此 输出 2。</p>
-</blockquote>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">y = x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上面代码中，函数<code>f</code>调用时，参数<code>y=x</code>形成一个单独的作用域。这个作用域里面，变量<code>x</code>本身是没有定义的，所以指向了外面的全局变量<code>x</code>。函数调用的时候，函数体内部的局部变量<code>x</code>是影响不到默认值变量<code>x</code>的。</p>
-</blockquote>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//例子1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y=function(</span>)</span>&#123;x=<span class="number">2</span>;&#125;)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> x=<span class="number">3</span>; <span class="comment">//重新声明的内部变量，和参数的单独作用域不同</span></span><br><span class="line"></span><br><span class="line">    y();  <span class="comment">//y里面的x指向第一个参数x</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// 3</span></span><br><span class="line">x     <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//例子2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y=function(</span>)</span>&#123;x=<span class="number">2</span>;&#125;)&#123;</span><br><span class="line"></span><br><span class="line">    x=<span class="number">3</span>; <span class="comment">// 此时指向了第一个参数</span></span><br><span class="line"></span><br><span class="line">    y(); <span class="comment">//y里面的x指向第一个参数x</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo() <span class="comment">// 2</span></span><br><span class="line">x     <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>上面代码中，例子1的函数<code>foo</code>的参数形成一个单独作用域。这个作用域里面，首先声明了变量<code>x</code>，然后声明了变量<code>y</code>，<code>y</code>的默认值是一个匿名函数。这个匿名函数内部的变量<code>x</code>，指向同一个作用域的第一个参数<code>x</code>。</li>
-<li>函数<code>foo</code>内部又声明了一个<code>内部变量x</code>，该变量与<code>第一个参数x</code>由于不是同一个作用域，所以不是同一个变量，因此执行<code>y</code>后，<code>内部变量x</code>和<code>外部全局变量x</code>的值都没变。</li>
-<li>如果将<code>var x = 3</code>的<code>var</code>去除，函数<code>foo</code>的<code>内部变量x</code>就指向<code>第一个参数x</code>，与匿名函数内部的<code>x</code>是一致的，所以最后输出的就是2，而外层的<code>全局变量x</code>依然不受影响。</li>
-</ul>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">length</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">context</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">seajs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/17/function-context/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/18/object/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          对象的拓展
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/04/09/function-spread/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">函数拓展之：拓展运算符（...）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-    <div class="duoshuo"></div>
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -347,9 +238,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
