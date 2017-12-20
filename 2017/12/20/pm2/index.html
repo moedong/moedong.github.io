@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>gulp对seajs的模块做合并压缩 | moedong&#39; personal blog</title>
+  <title>pm2管理koa2 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于gulp对seajs的模块做合并压缩的方式gulpfile.js 1234567891011//seajs合并模式gulp.task(&amp;quot;seajs&amp;quot;, function () &amp;#123;    return merge(        gulp.src(&amp;apos;dist/js/!(cmdlib|ckeditor|plugin|app)/**/*.js&amp;apos;,&amp;#">
-<meta name="keywords" content="node,koa2,seajs,gulp">
+  <meta name="description" content="1、部署package.json  1234567&quot;scripts&quot;: &amp;#123;    &quot;release&quot;: &quot;gulp release&quot;,    &quot;reduce&quot;: &quot;gulp reduce&quot;,    &quot;dev&quot;: &quot;gulp dev&quot;,    &quot;test&quot;: &quot;pm2 start ./config/ecosystem.config.js --env test&quot;,    &quot;server&quot;:">
+<meta name="keywords" content="node,koa2,pm2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gulp对seajs的模块做合并压缩">
-<meta property="og:url" content="http://yoursite.com/2017/12/14/gulp-seajs/index.html">
+<meta property="og:title" content="pm2管理koa2">
+<meta property="og:url" content="http://yoursite.com/2017/12/20/pm2/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
-<meta property="og:description" content="基于gulp对seajs的模块做合并压缩的方式gulpfile.js 1234567891011//seajs合并模式gulp.task(&amp;quot;seajs&amp;quot;, function () &amp;#123;    return merge(        gulp.src(&amp;apos;dist/js/!(cmdlib|ckeditor|plugin|app)/**/*.js&amp;apos;,&amp;#">
-<meta property="og:updated_time" content="2017-12-14T13:00:28.300Z">
+<meta property="og:description" content="1、部署package.json  1234567&quot;scripts&quot;: &amp;#123;    &quot;release&quot;: &quot;gulp release&quot;,    &quot;reduce&quot;: &quot;gulp reduce&quot;,    &quot;dev&quot;: &quot;gulp dev&quot;,    &quot;test&quot;: &quot;pm2 start ./config/ecosystem.config.js --env test&quot;,    &quot;server&quot;:">
+<meta property="og:updated_time" content="2017-12-20T08:51:25.368Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gulp对seajs的模块做合并压缩">
-<meta name="twitter:description" content="基于gulp对seajs的模块做合并压缩的方式gulpfile.js 1234567891011//seajs合并模式gulp.task(&amp;quot;seajs&amp;quot;, function () &amp;#123;    return merge(        gulp.src(&amp;apos;dist/js/!(cmdlib|ckeditor|plugin|app)/**/*.js&amp;apos;,&amp;#">
+<meta name="twitter:title" content="pm2管理koa2">
+<meta name="twitter:description" content="1、部署package.json  1234567&quot;scripts&quot;: &amp;#123;    &quot;release&quot;: &quot;gulp release&quot;,    &quot;reduce&quot;: &quot;gulp reduce&quot;,    &quot;dev&quot;: &quot;gulp dev&quot;,    &quot;test&quot;: &quot;pm2 start ./config/ecosystem.config.js --env test&quot;,    &quot;server&quot;:">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -148,20 +148,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-gulp-seajs" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-pm2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      gulp对seajs的模块做合并压缩
+      pm2管理koa2
     </h1>
   
 
         
-        <a href="/2017/12/14/gulp-seajs/" class="archive-article-date">
-  	<time datetime="2017-12-14T12:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+        <a href="/2017/12/20/pm2/" class="archive-article-date">
+  	<time datetime="2017-12-20T08:39:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
 </a>
         
         
@@ -169,19 +169,26 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共246字</span>，
-      <span>阅读时间1分钟</span>
+      <span>本文共322字</span>，
+      <span>阅读时间2分钟</span>
       </p>
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="基于gulp对seajs的模块做合并压缩的方式"><a href="#基于gulp对seajs的模块做合并压缩的方式" class="headerlink" title="基于gulp对seajs的模块做合并压缩的方式"></a>基于gulp对seajs的模块做合并压缩的方式</h6><p>gulpfile.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//seajs合并模式</span><br><span class="line">gulp.task(&quot;seajs&quot;, function () &#123;</span><br><span class="line">    return merge(</span><br><span class="line">        gulp.src(&apos;dist/js/!(cmdlib|ckeditor|plugin|app)/**/*.js&apos;,&#123;base:&apos;dist/js/&apos;&#125;)</span><br><span class="line">            .pipe(transport())</span><br><span class="line">            .pipe(concat(&#123;</span><br><span class="line">                base: &quot;dist/js/&quot;,</span><br><span class="line">            &#125;))</span><br><span class="line">            .pipe(gulp.dest(&apos;dist/js&apos;))</span><br><span class="line">    );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <h5 id="1、部署"><a href="#1、部署" class="headerlink" title="1、部署"></a>1、部署</h5><p>package.json </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "release": "gulp release",</span><br><span class="line">    "reduce": "gulp reduce",</span><br><span class="line">    "dev": "gulp dev",</span><br><span class="line">    "test": "pm2 start ./config/ecosystem.config.js --env test",</span><br><span class="line">    "server": "pm2 start ./config/ecosystem.config.js --env production"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<blockquote>
-<p>这个是seajs合并工作中比较关键的一点，它不像requirejs，直接做concat即可；它必须先经过一个transport的任务处理，将匿名模块变成具名模块，同时用define的第二个参数来描述这个模块的所有依赖，就像requirejs那样。只有做完了transport，才能利用gulp-seajs-concat做合并。原因请参考：<a href="https://github.com/seajs/seajs/issues/426。" target="_blank" rel="external">https://github.com/seajs/seajs/issues/426。</a><br>gulp-seajs-concat做合并的时候，就很简单了，只要告诉它一个 <code>base选项</code> 即可，这个base选项跟js/common.js中base选项保持一致。因为gulp-seajs-concat根据base和transport之后的模块，就能找到它所依赖的其它模块文件。</p>
-</blockquote>
-<p><a href="http://blog.csdn.net/sinat_17775997/article/details/52295209" target="_blank" rel="external">参考文章</a><br><a href="https://github.com/liuyunzhuge/blog/tree/master/seajs" target="_blank" rel="external">具体例子</a></p>
+<p>ecosystem.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    apps: [&#123;</span><br><span class="line">        name: <span class="string">"yjl"</span>,</span><br><span class="line">        script: <span class="string">"./app.js"</span>,</span><br><span class="line">        watch: <span class="literal">true</span>,</span><br><span class="line">        env: &#123;</span><br><span class="line">            NODE_ENV: <span class="string">"development"</span>,</span><br><span class="line">            PORT: <span class="number">443</span>,</span><br><span class="line">            API_URL:<span class="string">"https://backend.xxx"</span>,</span><br><span class="line">            SOURCE_PATH:<span class="string">"./src"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        env_test: &#123;</span><br><span class="line">            NODE_ENV: <span class="string">"test"</span>,</span><br><span class="line">            PORT: <span class="number">443</span>,</span><br><span class="line">            API_URL:<span class="string">"https://backend.xxx"</span>,</span><br><span class="line">            SOURCE_PATH:<span class="string">"./dist"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        env_production: &#123;</span><br><span class="line">            NODE_ENV: <span class="string">"production"</span>,</span><br><span class="line">            PORT: <span class="number">4000</span>,</span><br><span class="line">            API_URL:<span class="string">"http://backend.xxx"</span>,</span><br><span class="line">            SOURCE_PATH:<span class="string">"./dist"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        autorestart: <span class="literal">true</span>,</span><br><span class="line">        log_date_format: <span class="string">"YYYY-MM-DD HH:mm Z"</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>app.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">443</span>;</span><br><span class="line"><span class="keyword">const</span> env = process.env.NODE_ENV || <span class="string">'development'</span>;</span><br><span class="line"><span class="keyword">const</span> src = process.env.SOURCE_PATH || <span class="string">'./src'</span>;</span><br><span class="line"><span class="keyword">const</span> apiDomain = process.env.API_URL || <span class="string">'https://backend.xxx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置session中间件</span></span><br><span class="line">app.use(session(&#123;</span><br><span class="line">    key: <span class="string">"SESSIONID"</span>, <span class="comment">//default "koa:sess"</span></span><br><span class="line">    maxAge: <span class="number">2</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span> <span class="comment">//设置session超时时间,2小时</span></span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置全局变量</span></span><br><span class="line">app.use(<span class="keyword">async</span>(ctx, next) =&gt; &#123;</span><br><span class="line">    ctx.state.session = ctx.session;</span><br><span class="line">    ctx.state.apiDomain = apiDomain;</span><br><span class="line">    <span class="keyword">await</span> next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2、使用pm2"><a href="#2、使用pm2" class="headerlink" title="2、使用pm2"></a>2、使用pm2</h5><p>1、保存脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
+<p>2、创建开机启动脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 startup</span><br></pre></td></tr></table></figure>
+<p>3、设置开机自动启动(centos 7+)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable pm2-root.service</span><br></pre></td></tr></table></figure></p>
+<p>4、重启koa2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart yjl</span><br></pre></td></tr></table></figure></p>
+<p>5、重新搭建启动koa2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete yjl</span><br><span class="line">npm run server</span><br></pre></td></tr></table></figure></p>
+<p>6、查看错误日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm2 show yjl  #查看log的输出目录</span><br><span class="line"></span><br><span class="line">cd /root/.pm2/logs/ &amp;&amp; cat yjl-error-0.log</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -203,11 +210,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">seajs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pm2</a>
         		</li>
       		
 		</ul>
@@ -263,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/14/gulp-seajs/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/20/pm2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +280,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/20/pm2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          pm2管理koa2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/13/koa2-practice/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">koa2-生成环境部署注意事项</div>
+    <a href="/2017/12/14/gulp-seajs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gulp对seajs的模块做合并压缩</div>
       <i class="icon-circle-right"></i>
     </a>
   
