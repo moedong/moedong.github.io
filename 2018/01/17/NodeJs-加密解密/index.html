@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>pm2管理koa2 | moedong&#39; personal blog</title>
+  <title>NodeJs 加密解密 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、部署package.json  1234567&quot;scripts&quot;: &amp;#123;    &quot;release&quot;: &quot;gulp release&quot;,    &quot;reduce&quot;: &quot;gulp reduce&quot;,    &quot;dev&quot;: &quot;gulp dev&quot;,    &quot;test&quot;: &quot;pm2 start ./config/ecosystem.config.js --env test&quot;,    &quot;server&quot;:">
-<meta name="keywords" content="node,koa2,pm2">
+  <meta name="description" content="常见的加密算法基本分为这几类，1 :线性散列算法、2：对称性加密算法、3、非对称性加密算法。nodejs是通集成在内核中的crypto模块来完成加密解密。  crypto的基本使用 12345678910111213141516171819var crypto = require(&apos;crypto&apos;); //加密exports.cipher = function(algorithm, key, b">
+<meta name="keywords" content="node,crypto">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pm2管理koa2">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/pm2/index.html">
+<meta property="og:title" content="NodeJs 加密解密">
+<meta property="og:url" content="http://yoursite.com/2018/01/17/NodeJs-加密解密/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
-<meta property="og:description" content="1、部署package.json  1234567&quot;scripts&quot;: &amp;#123;    &quot;release&quot;: &quot;gulp release&quot;,    &quot;reduce&quot;: &quot;gulp reduce&quot;,    &quot;dev&quot;: &quot;gulp dev&quot;,    &quot;test&quot;: &quot;pm2 start ./config/ecosystem.config.js --env test&quot;,    &quot;server&quot;:">
-<meta property="og:updated_time" content="2017-12-20T08:51:25.368Z">
+<meta property="og:description" content="常见的加密算法基本分为这几类，1 :线性散列算法、2：对称性加密算法、3、非对称性加密算法。nodejs是通集成在内核中的crypto模块来完成加密解密。  crypto的基本使用 12345678910111213141516171819var crypto = require(&apos;crypto&apos;); //加密exports.cipher = function(algorithm, key, b">
+<meta property="og:updated_time" content="2018-01-17T09:04:22.933Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pm2管理koa2">
-<meta name="twitter:description" content="1、部署package.json  1234567&quot;scripts&quot;: &amp;#123;    &quot;release&quot;: &quot;gulp release&quot;,    &quot;reduce&quot;: &quot;gulp reduce&quot;,    &quot;dev&quot;: &quot;gulp dev&quot;,    &quot;test&quot;: &quot;pm2 start ./config/ecosystem.config.js --env test&quot;,    &quot;server&quot;:">
+<meta name="twitter:title" content="NodeJs 加密解密">
+<meta name="twitter:description" content="常见的加密算法基本分为这几类，1 :线性散列算法、2：对称性加密算法、3、非对称性加密算法。nodejs是通集成在内核中的crypto模块来完成加密解密。  crypto的基本使用 12345678910111213141516171819var crypto = require(&apos;crypto&apos;); //加密exports.cipher = function(algorithm, key, b">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -148,20 +148,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pm2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-NodeJs-加密解密" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      pm2管理koa2
+      NodeJs 加密解密
     </h1>
   
 
         
-        <a href="/2017/12/20/pm2/" class="archive-article-date">
-  	<time datetime="2017-12-20T08:39:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+        <a href="/2018/01/17/NodeJs-加密解密/" class="archive-article-date">
+  	<time datetime="2018-01-17T08:18:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
 </a>
         
         
@@ -169,26 +169,54 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共322字</span>，
-      <span>阅读时间2分钟</span>
+      <span>本文共737字</span>，
+      <span>阅读时间3分钟</span>
       </p>
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1、部署"><a href="#1、部署" class="headerlink" title="1、部署"></a>1、部署</h5><p>package.json </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "release": "gulp release",</span><br><span class="line">    "reduce": "gulp reduce",</span><br><span class="line">    "dev": "gulp dev",</span><br><span class="line">    "test": "pm2 start ./config/ecosystem.config.js --env test",</span><br><span class="line">    "server": "pm2 start ./config/ecosystem.config.js --env production"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>常见的加密算法基本分为这几类，1 :线性散列算法、2：对称性加密算法、3、非对称性加密算法。<br>nodejs是通集成在内核中的crypto模块来完成加密解密。</p>
+</blockquote>
+<p>crypto的基本使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">//加密</span></span><br><span class="line">exports.cipher = <span class="function"><span class="keyword">function</span>(<span class="params">algorithm, key, buf</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> encrypted = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> cip = crypto.createCipher(algorithm, key);</span><br><span class="line">    encrypted += cip.update(buf, <span class="string">'binary'</span>, <span class="string">'hex'</span>);</span><br><span class="line">    encrypted += cip.final(<span class="string">'hex'</span>);</span><br><span class="line">    <span class="keyword">return</span> encrypted</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//解密</span></span><br><span class="line">exports.decipher = <span class="function"><span class="keyword">function</span>(<span class="params">algorithm, key, encrypted</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> decrypted = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> decipher = crypto.createDecipher(algorithm, key);</span><br><span class="line">    decrypted += decipher.update(encrypted, <span class="string">'hex'</span>, <span class="string">'binary'</span>);</span><br><span class="line">    decrypted += decipher.final(<span class="string">'binary'</span>);</span><br><span class="line">    <span class="keyword">return</span> decrypted</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1、对称式加密"><a href="#1、对称式加密" class="headerlink" title="1、对称式加密"></a>1、对称式加密</h3><p>就是加密和解密使用同一个密钥，通常称之为“Session Key ”这种加密技术在当今被广泛采用，如美国政府所采用的DES加密标准就是一种典型的“对称式”加密法，它的Session Key长度为56bits。</p>
 <a id="more"></a>
-<p>ecosystem.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    apps: [&#123;</span><br><span class="line">        name: <span class="string">"yjl"</span>,</span><br><span class="line">        script: <span class="string">"./app.js"</span>,</span><br><span class="line">        watch: <span class="literal">true</span>,</span><br><span class="line">        env: &#123;</span><br><span class="line">            NODE_ENV: <span class="string">"development"</span>,</span><br><span class="line">            PORT: <span class="number">443</span>,</span><br><span class="line">            API_URL:<span class="string">"https://backend.xxx"</span>,</span><br><span class="line">            SOURCE_PATH:<span class="string">"./src"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        env_test: &#123;</span><br><span class="line">            NODE_ENV: <span class="string">"test"</span>,</span><br><span class="line">            PORT: <span class="number">443</span>,</span><br><span class="line">            API_URL:<span class="string">"https://backend.xxx"</span>,</span><br><span class="line">            SOURCE_PATH:<span class="string">"./dist"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        env_production: &#123;</span><br><span class="line">            NODE_ENV: <span class="string">"production"</span>,</span><br><span class="line">            PORT: <span class="number">4000</span>,</span><br><span class="line">            API_URL:<span class="string">"http://backend.xxx"</span>,</span><br><span class="line">            SOURCE_PATH:<span class="string">"./dist"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        autorestart: <span class="literal">true</span>,</span><br><span class="line">        log_date_format: <span class="string">"YYYY-MM-DD HH:mm Z"</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>app.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">443</span>;</span><br><span class="line"><span class="keyword">const</span> env = process.env.NODE_ENV || <span class="string">'development'</span>;</span><br><span class="line"><span class="keyword">const</span> src = process.env.SOURCE_PATH || <span class="string">'./src'</span>;</span><br><span class="line"><span class="keyword">const</span> apiDomain = process.env.API_URL || <span class="string">'https://backend.xxx'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置session中间件</span></span><br><span class="line">app.use(session(&#123;</span><br><span class="line">    key: <span class="string">"SESSIONID"</span>, <span class="comment">//default "koa:sess"</span></span><br><span class="line">    maxAge: <span class="number">2</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span> <span class="comment">//设置session超时时间,2小时</span></span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置全局变量</span></span><br><span class="line">app.use(<span class="keyword">async</span>(ctx, next) =&gt; &#123;</span><br><span class="line">    ctx.state.session = ctx.session;</span><br><span class="line">    ctx.state.apiDomain = apiDomain;</span><br><span class="line">    <span class="keyword">await</span> next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h5 id="2、使用pm2"><a href="#2、使用pm2" class="headerlink" title="2、使用pm2"></a>2、使用pm2</h5><p>1、保存脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
-<p>2、创建开机启动脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 startup</span><br></pre></td></tr></table></figure>
-<p>3、设置开机自动启动(centos 7+)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable pm2-root.service</span><br></pre></td></tr></table></figure></p>
-<p>4、重启koa2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 restart yjl</span><br></pre></td></tr></table></figure></p>
-<p>5、重新搭建启动koa2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 delete yjl</span><br><span class="line">npm run server</span><br></pre></td></tr></table></figure></p>
-<p>6、查看错误日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm2 show yjl  #查看log的输出目录</span><br><span class="line"></span><br><span class="line">cd /root/.pm2/logs/ &amp;&amp; cat yjl-error-0.log</span><br></pre></td></tr></table></figure></p>
+<p>栗子：</p>
+<p>1、加密模块的引用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crypto=<span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"><span class="keyword">var</span> $=<span class="built_in">require</span>(<span class="string">'underscore'</span>); <span class="comment">//underscore中的reduce、reduceRight方法，进行加密和解密的算法执行</span></span><br><span class="line"><span class="keyword">var</span> DEFAULTS = &#123;</span><br><span class="line">    encoding: &#123;</span><br><span class="line">        input: <span class="string">'utf8'</span>,</span><br><span class="line">        output: <span class="string">'hex'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    algorithms: [<span class="string">'bf'</span>, <span class="string">'blowfish'</span>, <span class="string">'aes-128-cbc'</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>默认加密算法配置项：</p>
+<ul>
+<li>数据输入格式为utf8，输出格式为hex;</li>
+<li>算法使用bf,blowfish,aes-128-abc三种加密算法;</li>
+</ul>
+</blockquote>
+<p>2、配置项初始化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MixCrypto</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> options == <span class="string">'string'</span>)</span><br><span class="line">		options = &#123; <span class="attr">key</span>: options &#125;;</span><br><span class="line"> </span><br><span class="line">	options = $.extend(&#123;&#125;, DEFAULTS, options);</span><br><span class="line">	<span class="keyword">this</span>.key = options.key;</span><br><span class="line">	<span class="keyword">this</span>.inputEncoding = options.encoding.input;</span><br><span class="line">	<span class="keyword">this</span>.outputEncoding = options.encoding.output;</span><br><span class="line">	<span class="keyword">this</span>.algorithms = options.algorithms;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>加密算法可以进行配置，通过配置option进行不同加密算法及编码的使用。</p>
+</blockquote>
+<p>3、加密方法代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MixCrypto.prototype.encrypt = <span class="function"><span class="keyword">function</span> (<span class="params">plaintext</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $.reduce(<span class="keyword">this</span>.algorithms, <span class="function"><span class="keyword">function</span> (<span class="params">memo, a</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> cipher = crypto.createCipher(a, <span class="keyword">this</span>.key);</span><br><span class="line">        <span class="keyword">return</span> cipher.update(memo, <span class="keyword">this</span>.inputEncoding, <span class="keyword">this</span>.outputEncoding)</span><br><span class="line">            + cipher.final(<span class="keyword">this</span>.outputEncoding)</span><br><span class="line">    &#125;, plaintext, <span class="keyword">this</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用crypto进行数据的加密处理。</p>
+</blockquote>
+<p>4、解密方法代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MixCrypto.prototype.decrypt = <span class="function"><span class="keyword">function</span> (<span class="params">crypted</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> $.reduceRight(<span class="keyword">this</span>.algorithms, <span class="function"><span class="keyword">function</span> (<span class="params">memo, a</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> decipher = crypto.createDecipher(a, <span class="keyword">this</span>.key);</span><br><span class="line">			<span class="keyword">return</span> decipher.update(memo, <span class="keyword">this</span>.outputEncoding, <span class="keyword">this</span>.inputEncoding)</span><br><span class="line">			+ decipher.final(<span class="keyword">this</span>.inputEncoding);</span><br><span class="line">		&#125;, crypted, <span class="keyword">this</span>);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>使用crypto进行数据的解密处理。</li>
+<li>通过underscore中的reduce、reduceRight方法，进行加密和解密的算法执行</li>
+</ul>
+</blockquote>
+<h3 id="2、非对称加密"><a href="#2、非对称加密" class="headerlink" title="2、非对称加密"></a>2、非对称加密</h3><p>非对称加密算法需要两个密钥：公开密钥(publickey)和私有密钥(privatekey)<br>公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密,因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法</p>
+<blockquote>
+<p>为私钥创建公钥</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl req -key key.pem -new -x509 -out cert.pem</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buffer = <span class="keyword">new</span> Buffer(<span class="string">'hello'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用公钥对数据进行加密</span></span><br><span class="line"><span class="keyword">var</span> secret = crypto.publicEncrypt(fs.readFileSync(<span class="string">'cert.pem'</span>).toString(), buffer);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用私钥对数据进行解密</span></span><br><span class="line"><span class="keyword">var</span> result = crypto.privateDecrypt(fs.readFileSync(<span class="string">'key.pem'</span>).toString(), secret);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result.toString());</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.jsdaxue.com/archives/136.html" target="_blank" rel="external">参考文章</a></p>
 
       
 
@@ -206,11 +234,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pm2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">crypto</a>
         		</li>
       		
 		</ul>
@@ -266,7 +290,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/20/pm2/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/17/NodeJs-加密解密/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +304,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/17/NodeJs-加密解密/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          NodeJs 加密解密
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/14/gulp-seajs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">gulp对seajs的模块做合并压缩</div>
+    <a href="/2017/12/20/pm2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pm2管理koa2</div>
       <i class="icon-circle-right"></i>
     </a>
   

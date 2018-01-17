@@ -145,6 +145,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-NodeJs-加密解密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/NodeJs-加密解密/">NodeJs 加密解密</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/17/NodeJs-加密解密/" class="archive-article-date">
+  	<time datetime="2018-01-17T08:18:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共737字</span>，
+      <span>阅读时间3分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>常见的加密算法基本分为这几类，1 :线性散列算法、2：对称性加密算法、3、非对称性加密算法。<br>nodejs是通集成在内核中的crypto模块来完成加密解密。</p>
+</blockquote>
+<p>crypto的基本使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">//加密</span></span><br><span class="line">exports.cipher = <span class="function"><span class="keyword">function</span>(<span class="params">algorithm, key, buf</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> encrypted = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> cip = crypto.createCipher(algorithm, key);</span><br><span class="line">    encrypted += cip.update(buf, <span class="string">'binary'</span>, <span class="string">'hex'</span>);</span><br><span class="line">    encrypted += cip.final(<span class="string">'hex'</span>);</span><br><span class="line">    <span class="keyword">return</span> encrypted</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//解密</span></span><br><span class="line">exports.decipher = <span class="function"><span class="keyword">function</span>(<span class="params">algorithm, key, encrypted</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> decrypted = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> decipher = crypto.createDecipher(algorithm, key);</span><br><span class="line">    decrypted += decipher.update(encrypted, <span class="string">'hex'</span>, <span class="string">'binary'</span>);</span><br><span class="line">    decrypted += decipher.final(<span class="string">'binary'</span>);</span><br><span class="line">    <span class="keyword">return</span> decrypted</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1、对称式加密"><a href="#1、对称式加密" class="headerlink" title="1、对称式加密"></a>1、对称式加密</h3><p>就是加密和解密使用同一个密钥，通常称之为“Session Key ”这种加密技术在当今被广泛采用，如美国政府所采用的DES加密标准就是一种典型的“对称式”加密法，它的Session Key长度为56bits。</p>
+        
+          <a class="article-more-a" href="/2018/01/17/NodeJs-加密解密/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">crypto</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/17/NodeJs-加密解密/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-pm2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1247,11 +1327,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -1609,7 +1689,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 moedong
+    		&copy; 2018 moedong
     	</div>
 
          本页点击 <span id="busuanzi_value_page_pv"></span> 次
@@ -1696,31 +1776,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">crypto</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rest</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">...</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1736,11 +1804,51 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color2">length</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">context</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">...</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">rest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">object</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pm2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1764,14 +1872,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
               </li>
              
@@ -1780,23 +1880,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">length</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">context</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Promise</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">object</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pm2</a>
               </li>
             
             <div class="clearfix"></div>
