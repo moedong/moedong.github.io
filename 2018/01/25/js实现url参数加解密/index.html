@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: length | moedong&#39; personal blog</title>
+  <title>js实现url参数加解密 | moedong&#39; personal blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="moedong&#39; personal blog">
-<meta property="og:url" content="http://yoursite.com/tags/length/index.html">
+  <meta name="description" content="js实现url参数加密解密  加密函数   12345678910111213141516171819202122232425262728293031323334353637383940414243function Encrypt(str, pwd) &amp;#123;    if (str == &quot;&quot;) return &quot;&quot;;    str = escape(str);    if (!pwd || p">
+<meta name="keywords" content="js,url">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js实现url参数加解密">
+<meta property="og:url" content="http://yoursite.com/2018/01/25/js实现url参数加解密/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
+<meta property="og:description" content="js实现url参数加密解密  加密函数   12345678910111213141516171819202122232425262728293031323334353637383940414243function Encrypt(str, pwd) &amp;#123;    if (str == &quot;&quot;) return &quot;&quot;;    str = escape(str);    if (!pwd || p">
+<meta property="og:updated_time" content="2018-01-25T02:43:26.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="moedong&#39; personal blog">
+<meta name="twitter:title" content="js实现url参数加解密">
+<meta name="twitter:description" content="js实现url参数加密解密  加密函数   12345678910111213141516171819202122232425262728293031323334353637383940414243function Encrypt(str, pwd) &amp;#123;    if (str == &quot;&quot;) return &quot;&quot;;    str = escape(str);    if (!pwd || p">
   
     <link rel="alternative" href="/atom.xml" title="moedong&#39; personal blog" type="application/atom+xml">
   
@@ -143,68 +148,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js实现url参数加解密" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/17/function-context/" class="archive-article-date">
-  	<time datetime="2017-04-17T11:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/17/function-context/">函数拓展之：length属性和作用域</a>
+    <h1 class="article-title" itemprop="name">
+      js实现url参数加解密
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/25/js实现url参数加解密/" class="archive-article-date">
+  	<time datetime="2018-01-25T02:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共511字</span>，
+      <span>阅读时间3分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js实现url参数加密解密"><a href="#js实现url参数加密解密" class="headerlink" title="js实现url参数加密解密"></a>js实现url参数加密解密</h3><blockquote>
+<ul>
+<li>加密函数</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Encrypt</span>(<span class="params">str, pwd</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="string">""</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    str = <span class="built_in">escape</span>(str);</span><br><span class="line">    <span class="keyword">if</span> (!pwd || pwd == <span class="string">""</span>) &#123; <span class="keyword">var</span> pwd = <span class="string">"1234"</span>; &#125;</span><br><span class="line">    pwd = <span class="built_in">escape</span>(pwd);</span><br><span class="line">    <span class="keyword">if</span> (pwd == <span class="literal">null</span> || pwd.length &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        alert(<span class="string">"Please enter a password with which to encrypt the message."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> prand = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> I = <span class="number">0</span>; I &lt; pwd.length; I++) &#123;</span><br><span class="line">        prand += pwd.charCodeAt(I).toString();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> sPos = <span class="built_in">Math</span>.floor(prand.length / <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">var</span> mult = <span class="built_in">parseInt</span>(prand.charAt(sPos) + prand.charAt(sPos * <span class="number">2</span>) + prand.charAt(sPos * <span class="number">3</span>) + prand.charAt(sPos * <span class="number">4</span>) + prand.charAt(sPos * <span class="number">5</span>));</span><br><span class="line">    <span class="keyword">var</span> incr = <span class="built_in">Math</span>.ceil(pwd.length / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">var</span> modu = <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (mult &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        alert(<span class="string">"Algorithm cannot find a suitable hash. Please choose a different password. /nPossible considerations are to choose a more complex or longer password."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> salt = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">1000000000</span>) % <span class="number">100000000</span>;</span><br><span class="line">    prand += salt;</span><br><span class="line">    <span class="keyword">while</span> (prand.length &gt; <span class="number">10</span>) &#123;</span><br><span class="line">        prand = (<span class="built_in">parseInt</span>(prand.substring(<span class="number">0</span>, <span class="number">10</span>)) + <span class="built_in">parseInt</span>(prand.substring(<span class="number">10</span>, prand.length))).toString();</span><br><span class="line">    &#125;</span><br><span class="line">    prand = (mult * prand + incr) % modu;</span><br><span class="line">    <span class="keyword">var</span> enc_chr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> enc_str = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> I = <span class="number">0</span>; I &lt; str.length; I++) &#123;</span><br><span class="line">        enc_chr = <span class="built_in">parseInt</span>(str.charCodeAt(I) ^ <span class="built_in">Math</span>.floor((prand / modu) * <span class="number">255</span>));</span><br><span class="line">        <span class="keyword">if</span> (enc_chr &lt; <span class="number">16</span>) &#123;</span><br><span class="line">            enc_str += <span class="string">"0"</span> + enc_chr.toString(<span class="number">16</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            enc_str += enc_chr.toString(<span class="number">16</span>);</span><br><span class="line">        prand = (mult * prand + incr) % modu;</span><br><span class="line">    &#125;</span><br><span class="line">    salt = salt.toString(<span class="number">16</span>);</span><br><span class="line">    <span class="keyword">while</span> (salt.length &lt; <span class="number">8</span>) salt = <span class="string">"0"</span> + salt;</span><br><span class="line">    enc_str += salt;</span><br><span class="line">    <span class="keyword">return</span> enc_str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<ul>
+<li>解密函数</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Decrypt</span>(<span class="params">str, pwd</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="string">""</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">if</span> (!pwd || pwd == <span class="string">""</span>) &#123; <span class="keyword">var</span> pwd = <span class="string">"1234"</span>; &#125;</span><br><span class="line">    pwd = <span class="built_in">escape</span>(pwd);</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="literal">null</span> || str.length &lt; <span class="number">8</span>) &#123;</span><br><span class="line">        alert(<span class="string">"A salt value could not be extracted from the encrypted message because it's length is too short. The message cannot be decrypted."</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pwd == <span class="literal">null</span> || pwd.length &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        alert(<span class="string">"Please enter a password with which to decrypt the message."</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> prand = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> I = <span class="number">0</span>; I &lt; pwd.length; I++) &#123;</span><br><span class="line">        prand += pwd.charCodeAt(I).toString();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> sPos = <span class="built_in">Math</span>.floor(prand.length / <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">var</span> mult = <span class="built_in">parseInt</span>(prand.charAt(sPos) + prand.charAt(sPos * <span class="number">2</span>) + prand.charAt(sPos * <span class="number">3</span>) + prand.charAt(sPos * <span class="number">4</span>) + prand.charAt(sPos * <span class="number">5</span>));</span><br><span class="line">    <span class="keyword">var</span> incr = <span class="built_in">Math</span>.round(pwd.length / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">var</span> modu = <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> salt = <span class="built_in">parseInt</span>(str.substring(str.length - <span class="number">8</span>, str.length), <span class="number">16</span>);</span><br><span class="line">    str = str.substring(<span class="number">0</span>, str.length - <span class="number">8</span>);</span><br><span class="line">    prand += salt;</span><br><span class="line">    <span class="keyword">while</span> (prand.length &gt; <span class="number">10</span>) &#123;</span><br><span class="line">        prand = (<span class="built_in">parseInt</span>(prand.substring(<span class="number">0</span>, <span class="number">10</span>)) + <span class="built_in">parseInt</span>(prand.substring(<span class="number">10</span>, prand.length))).toString();</span><br><span class="line">    &#125;</span><br><span class="line">    prand = (mult * prand + incr) % modu;</span><br><span class="line">    <span class="keyword">var</span> enc_chr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> enc_str = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> I = <span class="number">0</span>; I &lt; str.length; I += <span class="number">2</span>) &#123;</span><br><span class="line">        enc_chr = <span class="built_in">parseInt</span>(<span class="built_in">parseInt</span>(str.substring(I, I + <span class="number">2</span>), <span class="number">16</span>) ^ <span class="built_in">Math</span>.floor((prand / modu) * <span class="number">255</span>));</span><br><span class="line">        enc_str += <span class="built_in">String</span>.fromCharCode(enc_chr);</span><br><span class="line">        prand = (mult * prand + incr) % modu;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">unescape</span>(enc_str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">es6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">length</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">context</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">url</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/25/js实现url参数加解密/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/17/NodeJs-加密解密/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NodeJs 加密解密</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -234,9 +321,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
