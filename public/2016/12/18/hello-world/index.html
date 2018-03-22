@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/18/hello-world/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
 <meta property="og:description" content="1. 报错： ERROR Plugin load failed: hexo-generator-json-content按照这篇教程 一步步走，然后执行 hexo s，打开 http://localhost:4000/  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示     缺少模块， 需要在根目录下导入该包hexo-generator-json-content">
-<meta property="og:updated_time" content="2017-04-25T03:45:23.903Z">
+<meta property="og:updated_time" content="2017-11-15T04:57:01.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo(yilia)+Github构建个人博客错误收集">
 <meta name="twitter:description" content="1. 报错： ERROR Plugin load failed: hexo-generator-json-content按照这篇教程 一步步走，然后执行 hexo s，打开 http://localhost:4000/  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示     缺少模块， 需要在根目录下导入该包hexo-generator-json-content">
@@ -169,7 +169,7 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共219字</span>，
+      <span>本文共305字</span>，
       <span>阅读时间1分钟</span>
       </p>
     </div>
@@ -186,6 +186,11 @@
 <a id="more"></a>
 <h3 id="2-报错：ERROR-Deployer-not-found-github"><a href="#2-报错：ERROR-Deployer-not-found-github" class="headerlink" title="2. 报错：ERROR Deployer not found: github"></a>2. 报错：<code>ERROR Deployer not found: github</code></h3><p>解决办法：在根目录下 run  <code>npm install hexo-deployer-git --save</code>，将 _config.xml 中的 deploy 的type的值 改为 git </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h3 id="3-如何在多台电脑上更新博客"><a href="#3-如何在多台电脑上更新博客" class="headerlink" title="3. 如何在多台电脑上更新博客"></a>3. 如何在多台电脑上更新博客</h3><p>解决办法：</p>
+<p>1、git clone <a href="https://github.com/xxx/xxx.github.io" target="_blank" rel="external">https://github.com/xxx/xxx.github.io</a> 建立本地仓库<br>2、</p>
+<h3 id="4-报错：Host-key-verification-failed-fatal-Could-not-read-from-remote-repository"><a href="#4-报错：Host-key-verification-failed-fatal-Could-not-read-from-remote-repository" class="headerlink" title="4. 报错：Host key verification failed. fatal: Could not read from remote repository"></a>4. 报错：<code>Host key verification failed. fatal: Could not read from remote repository</code></h3><p>解决办法:</p>
+<p>1、在当前目录下打开 git bash, 然后输入 ：ssh git@github.com ，回复 “yes”<br>2、界面出现 “Connection to github.com closed” 成功。</p>
+
       
 
       
@@ -303,7 +308,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 moedong
+    		&copy; 2018 moedong
     	</div>
 
          本页点击 <span id="busuanzi_value_page_pv"></span> 次
@@ -390,11 +395,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">crypto</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+                <a href="javascript:void(0)" class="js-tag color5">rest</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -406,27 +423,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rest</a>
+                <a href="javascript:void(0)" class="js-tag color3">gitbook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
+                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,7 +443,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">seajs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,11 +459,39 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">()</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pm2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">()</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,14 +512,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
             
             <div class="clearfix"></div>

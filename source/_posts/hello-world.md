@@ -25,3 +25,18 @@ deploy:
   repository: git@github.com:xxx/xxx.github.io.git
   branch: master
 ```
+
+### 3. 如何在多台电脑上更新博客
+
+解决办法：
+
+1、git clone https://github.com/xxx/xxx.github.io 建立本地仓库
+2、
+
+
+### 4. 报错：`Host key verification failed. fatal: Could not read from remote repository`
+
+解决办法:
+
+1、在当前目录下打开 git bash, 然后输入 ：ssh git@github.com ，回复 “yes”
+2、界面出现 “Connection to github.com closed” 成功。

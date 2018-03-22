@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/25/logic/index.html">
 <meta property="og:site_name" content="moedong&#39; personal blog">
 <meta property="og:description" content="逻辑1 实现判断传入的两个数组是否相似。具体需求：  数组中的成员类型相同，顺序可以不同。例如[1, true] 与 [false, 2]是相似的。 数组的长度一致。 类型的判断范围，需要区分:String, Boolean, Number, undefined, null, 函数，日期, window.">
-<meta property="og:updated_time" content="2017-04-28T05:16:34.200Z">
+<meta property="og:updated_time" content="2018-01-29T08:18:02.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="逻辑思维">
 <meta name="twitter:description" content="逻辑1 实现判断传入的两个数组是否相似。具体需求：  数组中的成员类型相同，顺序可以不同。例如[1, true] 与 [false, 2]是相似的。 数组的长度一致。 类型的判断范围，需要区分:String, Boolean, Number, undefined, null, 函数，日期, window.">
@@ -169,8 +169,8 @@
     
     <div class="article-entry">
       <p style="text-align:right">
-      <span>本文共2,396字</span>，
-      <span>阅读时间12分钟</span>
+      <span>本文共3,277字</span>，
+      <span>阅读时间16分钟</span>
       </p>
     </div>
     <div class="article-entry" itemprop="articleBody">
@@ -257,6 +257,20 @@
 <p>实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.clone=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> o=<span class="keyword">this</span>.constructor===<span class="built_in">Array</span>?[]:&#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> e <span class="keyword">in</span> <span class="keyword">this</span>)&#123;</span><br><span class="line">        o[e]=typeOf <span class="keyword">this</span>[e]===<span class="string">"object"</span>?<span class="keyword">this</span>[e].clone():<span class="keyword">this</span>[e];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="js作用域"><a href="#js作用域" class="headerlink" title="js作用域"></a>js作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>;</span><br><span class="line">    &#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//问自动执行函数会返回什么值</span></span><br><span class="line"><span class="comment">// 就是考Arguments对象的typeof</span></span><br><span class="line"><span class="comment">// 看平时用firebug多不多了……</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">23</span>; &#125;;</span><br><span class="line">  <span class="keyword">typeof</span> g();</span><br><span class="line"><span class="comment">//问最后一行的执行结果</span></span><br><span class="line"><span class="comment">//根据标准，命名函数表达式的函数名只对函数体内可见</span></span><br><span class="line"><span class="comment">//因此报错</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   (<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> x;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">    &#125;)(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//问自动执行函数会返回什么值</span></span><br><span class="line"><span class="comment">// 参数不可删除</span></span><br><span class="line"><span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> y = <span class="number">1</span>, x = y = <span class="keyword">typeof</span> x;</span><br><span class="line">    x;</span><br><span class="line"><span class="comment">//问最后一行的执行结果</span></span><br><span class="line"><span class="comment">//声明两个变量x与y，y最初赋为1,x没有赋值，默认赋给window的一个属性undefined，</span></span><br><span class="line"><span class="comment">//因此typeof undefined为"undefined",最后x= y= "undefined"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">f</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> f();</span><br><span class="line">    &#125;)(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;);</span><br><span class="line"><span class="comment">//问自动执行函数会返回什么值</span></span><br><span class="line"><span class="comment">//函数名被优先级更高的参数名覆盖了 ---&gt;</span></span><br><span class="line"><span class="comment">// (function (f)&#123;</span></span><br><span class="line"><span class="comment">//   return typeof f();</span></span><br><span class="line"><span class="comment">//  &#125;)(function()&#123; return 1; &#125;);</span></span><br><span class="line"><span class="comment">//typeof 1 ---&gt; "number"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> foo = &#123; </span><br><span class="line">      bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.baz; &#125;, </span><br><span class="line">      baz: <span class="number">1</span></span><br><span class="line">    &#125;;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();</span><br><span class="line">    &#125;)(foo.bar);</span><br><span class="line"><span class="comment">//问自动执行函数会返回什么值</span></span><br><span class="line"><span class="comment">//我们把下面那个自动执行函数分解一下</span></span><br><span class="line"><span class="comment">//var a = function()&#123;</span></span><br><span class="line"><span class="comment">//  return typeof arguments[0]();</span></span><br><span class="line"><span class="comment">//&#125;;</span></span><br><span class="line"><span class="comment">//a(foo.bar)</span></span><br><span class="line"><span class="comment">//执行完arguments[0]()，即得到this.baz</span></span><br><span class="line"><span class="comment">//由于this变量在此绑定失效，它指向window，window有bax变量吗？</span></span><br><span class="line"><span class="comment">//没有，返回"undefined"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> foo = &#123;</span><br><span class="line">      bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.baz; &#125;,</span><br><span class="line">      baz: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">typeof</span> (f = foo.bar)();</span><br><span class="line"><span class="comment">//问最后一行的执行结果</span></span><br><span class="line"><span class="comment">//我们把最后一行分解一下</span></span><br><span class="line"><span class="comment">//window.f</span></span><br><span class="line"><span class="comment">//f= foo.bar</span></span><br><span class="line"><span class="comment">// f()</span></span><br><span class="line"><span class="comment">// typeof f()</span></span><br><span class="line"><span class="comment">//返回"undefined"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> f = (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="string">"1"</span>; &#125;, <span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">2</span>; &#125;)();</span><br><span class="line">    <span class="keyword">typeof</span> f;</span><br><span class="line"><span class="comment">//问最后一行的执行结果</span></span><br><span class="line"><span class="comment">//首先要理解分组选择符，最后a会赋给什么呢？</span></span><br><span class="line"><span class="comment">// var a = (1,2,3);</span></span><br><span class="line"><span class="comment">// alert(a) ---&gt; 3</span></span><br><span class="line"><span class="comment">//那么这就简单了，f = function()&#123;return 2&#125;;</span></span><br><span class="line"><span class="comment">//typeof f() ---&gt; number</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">if</span> (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;&#125;) &#123;</span><br><span class="line">   x += <span class="keyword">typeof</span> f;</span><br><span class="line"> &#125;</span><br><span class="line"> x;<span class="comment">//问x的值</span></span><br><span class="line"><span class="comment">//函数声明只能裸露于全局作用域下或位于函数体中。</span></span><br><span class="line">    <span class="comment">//从句法上讲，它们不能出现在块中，例如不能出现在</span></span><br><span class="line">    <span class="comment">// if、while 或 for 语句中。因为块只能包含语句，</span></span><br><span class="line">    <span class="comment">//因此if()中的f函数不能当做函数声明，当成表达式使用</span></span><br><span class="line">    <span class="comment">//可能在预编译阶段做了如下处理</span></span><br><span class="line">    <span class="comment">//if((XXX = function()&#123;&#125;))</span></span><br><span class="line">    <span class="comment">//因此我们是找不到f的</span></span><br><span class="line">    <span class="comment">// 1undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="keyword">var</span> x = [<span class="keyword">typeof</span> x, <span class="keyword">typeof</span> y][<span class="number">1</span>];</span><br><span class="line">     <span class="keyword">typeof</span> <span class="keyword">typeof</span> x;</span><br><span class="line"><span class="comment">//问最后一行的执行结果</span></span><br><span class="line"><span class="comment">//数组其实就是这个样子["undefined","undefined"]</span></span><br><span class="line"><span class="comment">//"string"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   (<span class="function"><span class="keyword">function</span>(<span class="params">foo</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> foo.bar;</span><br><span class="line">    &#125;)(&#123; <span class="attr">foo</span>: &#123; <span class="attr">bar</span>: <span class="number">1</span> &#125; &#125;);</span><br><span class="line"><span class="comment">//问自动执行函数会返回什么值</span></span><br><span class="line"><span class="comment">//分解一下</span></span><br><span class="line"><span class="comment">// var bb = &#123; foo: &#123; bar: 1 &#125; &#125;</span></span><br><span class="line"><span class="comment">//  (function(j)&#123;</span></span><br><span class="line"><span class="comment">//    return typeof j.bar</span></span><br><span class="line"><span class="comment">// &#125;)(bb)</span></span><br><span class="line"><span class="comment">// "undefined"</span></span><br><span class="line"><span class="comment">//注意那个对象只有foo属性，没有bar属性</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;</span><br><span class="line">      <span class="keyword">return</span> f();</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">2</span>; &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"><span class="comment">//问自动执行函数会返回什么值</span></span><br><span class="line"><span class="comment">//函数声明会在预编译阶段被提前</span></span><br><span class="line"><span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> f; &#125;</span><br><span class="line"> <span class="keyword">new</span> f() <span class="keyword">instanceof</span> f;<span class="comment">//问这一行的值</span></span><br><span class="line"><span class="comment">//由于函数f会返回自身，这个new 就形同虚设</span></span><br><span class="line"><span class="comment">//如果f的形式为 function f()&#123;return this&#125;或function f()&#123;&#125;就不一样</span></span><br><span class="line"><span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> (<span class="function"><span class="keyword">function</span>(<span class="params">x, undefined</span>)</span>&#123;&#125;) length;</span><br><span class="line"><span class="comment">//问length的值为多少</span></span><br><span class="line"><span class="comment">//with就是一个读写器，题意是取出函数的length属性</span></span><br><span class="line"><span class="comment">//而函数的length就是指它形参的长度  </span></span><br><span class="line"> <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -375,7 +389,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 moedong
+    		&copy; 2018 moedong
     	</div>
 
          本页点击 <span id="busuanzi_value_page_pv"></span> 次
@@ -462,11 +476,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">crypto</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+                <a href="javascript:void(0)" class="js-tag color5">rest</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,27 +504,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rest</a>
+                <a href="javascript:void(0)" class="js-tag color3">gitbook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
+                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,7 +524,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">seajs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,11 +540,39 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">()</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pm2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">()</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,14 +593,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
             
             <div class="clearfix"></div>

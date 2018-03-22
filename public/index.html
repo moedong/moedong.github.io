@@ -145,6 +145,573 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-accurateOperation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/22/accurateOperation/">JavaScript浮点数运算的精度问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/22/accurateOperation/" class="archive-article-date">
+  	<time datetime="2018-03-22T07:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-22</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共1,812字</span>，
+      <span>阅读时间8分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 JavaScript 中整数和浮点数都属于 Number 数据类型，所有数字都是以 64 位浮点数形式储存。当做浮点数<br>运算时，会发现一些问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加法 =====================</span></span><br><span class="line"><span class="comment">// 0.1 + 0.2 = 0.30000000000000004</span></span><br><span class="line"><span class="comment">// 0.7 + 0.1 = 0.7999999999999999</span></span><br><span class="line"><span class="comment">// 0.2 + 0.4 = 0.6000000000000001</span></span><br><span class="line"><span class="comment">// 2.22 + 0.1 = 2.3200000000000003</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 减法 =====================</span></span><br><span class="line"><span class="comment">// 1.5 - 1.2 = 0.30000000000000004</span></span><br><span class="line"><span class="comment">// 0.3 - 0.2 = 0.09999999999999998</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 乘法 =====================</span></span><br><span class="line"><span class="comment">// 19.9 * 100 = 1989.9999999999998</span></span><br><span class="line"><span class="comment">// 19.9 * 10 * 10 = 1990</span></span><br><span class="line"><span class="comment">// 1306377.64 * 100 = 130637763.99999999</span></span><br><span class="line"><span class="comment">// 1306377.64 * 10 * 10 = 130637763.99999999</span></span><br><span class="line"><span class="comment">// 0.7 * 180 = 125.99999999999999</span></span><br><span class="line"><span class="comment">// 9.7 * 100 = 969.9999999999999</span></span><br><span class="line"><span class="comment">// 39.7 * 100 = 3970.0000000000005</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 除法 =====================</span></span><br><span class="line"><span class="comment">// 0.3 / 0.1 = 2.9999999999999996</span></span><br><span class="line"><span class="comment">// 0.69 / 10 = 0.06899999999999999</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/03/22/accurateOperation/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/22/accurateOperation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-gitbook" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/26/gitbook/">使用gitbook编写api文档</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/26/gitbook/" class="archive-article-date">
+  	<time datetime="2018-02-26T08:57:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-26</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共691字</span>，
+      <span>阅读时间3分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、安装gitbook"><a href="#1、安装gitbook" class="headerlink" title="1、安装gitbook"></a>1、安装gitbook</h3><p>使用npm来安装，在命令行中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gitbook-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装完成之后，你可以使用下面的命令来检验是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook -V</span><br></pre></td></tr></table></figure>
+<h3 id="2、创建gitbook目录结构"><a href="#2、创建gitbook目录结构" class="headerlink" title="2、创建gitbook目录结构"></a>2、创建gitbook目录结构</h3><p><strong>README.md</strong> 这个文件相对于是一本Gitbook的简介，比如我们这本书的README.md :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Gitbook 使用入门</span><br><span class="line">&gt; GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书。</span><br><span class="line">本书将简单介绍如何安装、编写、生成、发布一本在线图书。</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/02/26/gitbook/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">gitbook</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pdf</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/26/gitbook/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-js实现url参数加解密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/25/js实现url参数加解密/">js实现url参数加解密</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/25/js实现url参数加解密/" class="archive-article-date">
+  	<time datetime="2018-01-25T02:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共511字</span>，
+      <span>阅读时间3分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js实现url参数加密解密"><a href="#js实现url参数加密解密" class="headerlink" title="js实现url参数加密解密"></a>js实现url参数加密解密</h3><blockquote>
+<ul>
+<li>加密函数</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Encrypt</span>(<span class="params">str, pwd</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str == <span class="string">""</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    str = <span class="built_in">escape</span>(str);</span><br><span class="line">    <span class="keyword">if</span> (!pwd || pwd == <span class="string">""</span>) &#123; <span class="keyword">var</span> pwd = <span class="string">"1234"</span>; &#125;</span><br><span class="line">    pwd = <span class="built_in">escape</span>(pwd);</span><br><span class="line">    <span class="keyword">if</span> (pwd == <span class="literal">null</span> || pwd.length &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">        alert(<span class="string">"Please enter a password with which to encrypt the message."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> prand = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> I = <span class="number">0</span>; I &lt; pwd.length; I++) &#123;</span><br><span class="line">        prand += pwd.charCodeAt(I).toString();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> sPos = <span class="built_in">Math</span>.floor(prand.length / <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">var</span> mult = <span class="built_in">parseInt</span>(prand.charAt(sPos) + prand.charAt(sPos * <span class="number">2</span>) + prand.charAt(sPos * <span class="number">3</span>) + prand.charAt(sPos * <span class="number">4</span>) + prand.charAt(sPos * <span class="number">5</span>));</span><br><span class="line">    <span class="keyword">var</span> incr = <span class="built_in">Math</span>.ceil(pwd.length / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">var</span> modu = <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (mult &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        alert(<span class="string">"Algorithm cannot find a suitable hash. Please choose a different password. /nPossible considerations are to choose a more complex or longer password."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> salt = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * <span class="number">1000000000</span>) % <span class="number">100000000</span>;</span><br><span class="line">    prand += salt;</span><br><span class="line">    <span class="keyword">while</span> (prand.length &gt; <span class="number">10</span>) &#123;</span><br><span class="line">        prand = (<span class="built_in">parseInt</span>(prand.substring(<span class="number">0</span>, <span class="number">10</span>)) + <span class="built_in">parseInt</span>(prand.substring(<span class="number">10</span>, prand.length))).toString();</span><br><span class="line">    &#125;</span><br><span class="line">    prand = (mult * prand + incr) % modu;</span><br><span class="line">    <span class="keyword">var</span> enc_chr = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> enc_str = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> I = <span class="number">0</span>; I &lt; str.length; I++) &#123;</span><br><span class="line">        enc_chr = <span class="built_in">parseInt</span>(str.charCodeAt(I) ^ <span class="built_in">Math</span>.floor((prand / modu) * <span class="number">255</span>));</span><br><span class="line">        <span class="keyword">if</span> (enc_chr &lt; <span class="number">16</span>) &#123;</span><br><span class="line">            enc_str += <span class="string">"0"</span> + enc_chr.toString(<span class="number">16</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            enc_str += enc_chr.toString(<span class="number">16</span>);</span><br><span class="line">        prand = (mult * prand + incr) % modu;</span><br><span class="line">    &#125;</span><br><span class="line">    salt = salt.toString(<span class="number">16</span>);</span><br><span class="line">    <span class="keyword">while</span> (salt.length &lt; <span class="number">8</span>) salt = <span class="string">"0"</span> + salt;</span><br><span class="line">    enc_str += salt;</span><br><span class="line">    <span class="keyword">return</span> enc_str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/01/25/js实现url参数加解密/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">url</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/25/js实现url参数加解密/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-NodeJs-加密解密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/NodeJs-加密解密/">NodeJs 加密解密</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/17/NodeJs-加密解密/" class="archive-article-date">
+  	<time datetime="2018-01-17T08:18:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共737字</span>，
+      <span>阅读时间3分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>常见的加密算法基本分为这几类，1 :线性散列算法、2：对称性加密算法、3、非对称性加密算法。<br>nodejs是通集成在内核中的crypto模块来完成加密解密。</p>
+</blockquote>
+<p>crypto的基本使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">//加密</span></span><br><span class="line">exports.cipher = <span class="function"><span class="keyword">function</span>(<span class="params">algorithm, key, buf</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> encrypted = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> cip = crypto.createCipher(algorithm, key);</span><br><span class="line">    encrypted += cip.update(buf, <span class="string">'binary'</span>, <span class="string">'hex'</span>);</span><br><span class="line">    encrypted += cip.final(<span class="string">'hex'</span>);</span><br><span class="line">    <span class="keyword">return</span> encrypted</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//解密</span></span><br><span class="line">exports.decipher = <span class="function"><span class="keyword">function</span>(<span class="params">algorithm, key, encrypted</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> decrypted = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> decipher = crypto.createDecipher(algorithm, key);</span><br><span class="line">    decrypted += decipher.update(encrypted, <span class="string">'hex'</span>, <span class="string">'binary'</span>);</span><br><span class="line">    decrypted += decipher.final(<span class="string">'binary'</span>);</span><br><span class="line">    <span class="keyword">return</span> decrypted</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1、对称式加密"><a href="#1、对称式加密" class="headerlink" title="1、对称式加密"></a>1、对称式加密</h3><p>就是加密和解密使用同一个密钥，通常称之为“Session Key ”这种加密技术在当今被广泛采用，如美国政府所采用的DES加密标准就是一种典型的“对称式”加密法，它的Session Key长度为56bits。</p>
+        
+          <a class="article-more-a" href="/2018/01/17/NodeJs-加密解密/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">crypto</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/17/NodeJs-加密解密/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-pm2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/20/pm2/">pm2管理koa2</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/20/pm2/" class="archive-article-date">
+  	<time datetime="2017-12-20T08:39:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共322字</span>，
+      <span>阅读时间2分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1、部署"><a href="#1、部署" class="headerlink" title="1、部署"></a>1、部署</h5><p>package.json </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "release": "gulp release",</span><br><span class="line">    "reduce": "gulp reduce",</span><br><span class="line">    "dev": "gulp dev",</span><br><span class="line">    "test": "pm2 start ./config/ecosystem.config.js --env test",</span><br><span class="line">    "server": "pm2 start ./config/ecosystem.config.js --env production"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/20/pm2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pm2</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/20/pm2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-gulp-seajs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/14/gulp-seajs/">gulp对seajs的模块做合并压缩</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/14/gulp-seajs/" class="archive-article-date">
+  	<time datetime="2017-12-14T12:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共246字</span>，
+      <span>阅读时间1分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="基于gulp对seajs的模块做合并压缩的方式"><a href="#基于gulp对seajs的模块做合并压缩的方式" class="headerlink" title="基于gulp对seajs的模块做合并压缩的方式"></a>基于gulp对seajs的模块做合并压缩的方式</h6><p>gulpfile.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//seajs合并模式</span><br><span class="line">gulp.task(&quot;seajs&quot;, function () &#123;</span><br><span class="line">    return merge(</span><br><span class="line">        gulp.src(&apos;dist/js/!(cmdlib|ckeditor|plugin|app)/**/*.js&apos;,&#123;base:&apos;dist/js/&apos;&#125;)</span><br><span class="line">            .pipe(transport())</span><br><span class="line">            .pipe(concat(&#123;</span><br><span class="line">                base: &quot;dist/js/&quot;,</span><br><span class="line">            &#125;))</span><br><span class="line">            .pipe(gulp.dest(&apos;dist/js&apos;))</span><br><span class="line">    );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/12/14/gulp-seajs/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">seajs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/14/gulp-seajs/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-koa2-practice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/13/koa2-practice/">koa2-生成环境部署注意事项</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/13/koa2-practice/" class="archive-article-date">
+  	<time datetime="2017-12-13T06:39:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry">
+      <p style="text-align:right">
+      <span>本文共1,376字</span>，
+      <span>阅读时间6分钟</span>
+      </p>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>koa2应用部署到生产环境,需要做一些安全配置。</p>
+</blockquote>
+<h6 id="1、安全性相关的HTTP头"><a href="#1、安全性相关的HTTP头" class="headerlink" title="1、安全性相关的HTTP头"></a>1、安全性相关的HTTP头</h6><p>以下是一些安全性相关的HTTP头，你的站点应该设置它们：</p>
+<blockquote>
+<ul>
+<li>Strict-Transport-Security：强制使用安全连接（SSL/TLS之上的HTTPS）来连接到服务器。</li>
+<li>X-Frame-Options：提供对于“点击劫持”的保护。</li>
+<li>X-XSS-Protection：开启大多现代浏览器内建的对于跨站脚本攻击（XSS）的过滤功能。</li>
+<li>X-Content-Type-Options： 防止浏览器使用MIME-sniffing来确定响应的类型，转而使用明确的content-type来确定。</li>
+<li>Content-Security-Policy：防止受到跨站脚本攻击以及其他跨站注入攻击。</li>
+</ul>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/12/13/koa2-practice/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/13/koa2-practice/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-koa2-uploadfile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -190,11 +757,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
         		</li>
       		
 		</ul>
@@ -268,11 +835,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">koa2</a>
         		</li>
       		
 		</ul>
@@ -1184,166 +1751,10 @@
 
 
   
-    <article id="post-logic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/25/logic/">逻辑思维</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/25/logic/" class="archive-article-date">
-  	<time datetime="2016-12-24T16:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry">
-      <p style="text-align:right">
-      <span>本文共2,396字</span>，
-      <span>阅读时间12分钟</span>
-      </p>
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="逻辑1"><a href="#逻辑1" class="headerlink" title="逻辑1"></a>逻辑1</h4><blockquote>
-<p>实现判断传入的两个数组是否相似。具体需求：</p>
-<ol>
-<li>数组中的成员类型相同，顺序可以不同。例如[1, true] 与 [false, 2]是相似的。</li>
-<li>数组的长度一致。</li>
-<li>类型的判断范围，需要区分:String, Boolean, Number, undefined, null, 函数，日期, window.</li>
-</ol>
-</blockquote>
-        
-          <a class="article-more-a" href="/2016/12/25/logic/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/25/logic/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/18/hello-world/">Hexo(yilia)+Github构建个人博客错误收集</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/18/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-18T11:58:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-18</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry">
-      <p style="text-align:right">
-      <span>本文共219字</span>，
-      <span>阅读时间1分钟</span>
-      </p>
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-报错：-ERROR-Plugin-load-failed-hexo-generator-json-content"><a href="#1-报错：-ERROR-Plugin-load-failed-hexo-generator-json-content" class="headerlink" title="1. 报错： ERROR Plugin load failed: hexo-generator-json-content"></a>1. 报错： <code>ERROR Plugin load failed: hexo-generator-json-content</code></h3><p>按照<a href="http://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="external">这篇教程</a> 一步步走，然后执行 hexo s，打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  可以看到主页了，但是 点击左下角的“所有文章”的时候，发现 文章列表里面出现提示  </p>
-<blockquote>
-<ul>
-<li>缺少模块， 需要在根目录下导入该包hexo-generator-json-content。</li>
-<li>配置根目录下的 _config.xml文件，配置代码有提示。</li>
-</ul>
-</blockquote>
-<p>当导入完包后,重新执行 hexo g ，cmd上面报错了 <code>ERROR Plugin load failed: hexo-generator-json-content</code>,查找相关的文章资料，是由于node版过低造成的，解决办法是 把node升级到6.0版本及以上。</p>
-        
-          <a class="article-more-a" href="/2016/12/18/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/18/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1354,7 +1765,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 moedong
+    		&copy; 2018 moedong
     	</div>
 
          本页点击 <span id="busuanzi_value_page_pv"></span> 次
@@ -1441,11 +1852,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">crypto</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+                <a href="javascript:void(0)" class="js-tag color5">rest</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1457,27 +1880,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">解构赋值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">...</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rest</a>
+                <a href="javascript:void(0)" class="js-tag color3">gitbook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">http</a>
+                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1485,7 +1900,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color1">seajs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1497,11 +1916,39 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">()</a>
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">url</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pm2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">()</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1522,14 +1969,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">setTimeou</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">setInterval</a>
               </li>
             
             <div class="clearfix"></div>
